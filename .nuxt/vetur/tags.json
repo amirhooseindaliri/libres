@@ -1,0 +1,26 @@
+{
+  "Header": {
+    "description": "Auto imported from components/Header.vue"
+  },
+  "Sidebar": {
+    "description": "Auto imported from components/Sidebar.vue"
+  },
+  "AppIconsBottomArrow": {
+    "description": "Auto imported from components/appIcons/BottomArrow.vue"
+  },
+  "AppIconsNextIcon": {
+    "description": "Auto imported from components/appIcons/NextIcon.vue"
+  },
+  "AppIconsPancakeswap": {
+    "description": "Auto imported from components/appIcons/Pancakeswap.vue"
+  },
+  "AppIconsPrevIcon": {
+    "description": "Auto imported from components/appIcons/PrevIcon.vue"
+  },
+  "AppIconsReadMore": {
+    "description": "Auto imported from components/appIcons/ReadMore.vue"
+  },
+  "AppIconsSushiswap": {
+    "description": "Auto imported from components/appIcons/Sushiswap.vue"
+  }
+}

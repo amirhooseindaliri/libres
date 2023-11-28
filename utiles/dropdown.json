@@ -1,0 +1,49 @@
+{
+    "exercise": "",
+    "questionTitle": "",
+    "questionType":"Jakhali | Dropdown",
+    "questions": [
+        {
+            "sentense": "I $DROPDOWN from $DROPDOWN /n",
+            "dropdowns": {
+                "1": {
+                    "choices": [
+                        "am",
+                        "are"
+                    ],
+                    "chosen": "0|1|null",
+                    "correct":"0|1"
+                },
+                "2": {
+                    "choices": [
+                        "am",
+                        "are"
+                    ],
+                    "chosen": "0|1|null",
+                    "correct":"0|1"
+                }
+            }
+        },
+        {
+            "sentense": "I $DROPDOWN from $DROPDOWN /n",
+            "dropdowns": {
+                "1": {
+                    "choices": [
+                        "am",
+                        "are"
+                    ],
+                    "chosen": "0|1|null",
+                    "correct":"0|1"
+                },
+                "2": {
+                    "choices": [
+                        "am",
+                        "are"
+                    ],
+                    "chosen": "0|1|null",
+                    "correct":"0|1"
+                }
+            }
+        },
+    ]
+}

@@ -1,0 +1,9 @@
+@import 'global.scss';
+@import '../fonts/fontPoppins.scss';
+@import './abstract/variables/variables';
+@import './abstract/mixin/fontClassGenerator';
+@import './abstract/mixin/borderRadius';
+@import './components/header.scss';
+@import './components/icon.scss';
+@import './components/jquery.dataTables.scss';
+@import './components/requests.scss';

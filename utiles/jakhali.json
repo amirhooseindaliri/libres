@@ -1,0 +1,12 @@
+{
+    "exercise": "",
+    "questionTitle": "",
+    "header": {
+        "type": "words|images",
+        "items": []
+    },
+    "images":["srcimages" , "srcimages"],
+    "questions": [
+        "I $WORD from $WORD /n" , "I $WORD from $WORD /n"
+    ]
+}
