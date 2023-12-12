@@ -1,3 +1,4 @@
+export { default as DatePicker } from '../../components/DatePicker.vue'
 export { default as Header } from '../../components/Header.vue'
 export { default as Sidebar } from '../../components/Sidebar.vue'
 export { default as AppIconsBottomArrow } from '../../components/appIcons/BottomArrow.vue'

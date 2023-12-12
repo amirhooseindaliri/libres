@@ -12,7 +12,7 @@ export default {
     themes: {
       light: {
         primaryLight: "#80ABFF",
-        primary: "#347362",
+        primary: "#333437",
         primaryDark: "#1A3931",
         success: "#52CC8F",
         successScale1: "#04B283",
@@ -35,7 +35,7 @@ export default {
       },
       dark: {
         primaryLight: "#80ABFF",
-        primary: "#347362",
+        primary: "#333437",
         primaryDark: "#1A3931",
         success: "#52CC8F",
         successScale1: "#04B283",

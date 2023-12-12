@@ -10,6 +10,9 @@ const _606a34a4 = () => interopDefault(import('../pages/Book/videos.vue' /* webp
 const _7d701120 = () => interopDefault(import('../pages/Book/Workbook.vue' /* webpackChunkName: "pages/Book/Workbook" */))
 const _9e56b748 = () => interopDefault(import('../pages/Profile/index.vue' /* webpackChunkName: "pages/Profile/index" */))
 const _5efa4a07 = () => interopDefault(import('../pages/Requests/index.vue' /* webpackChunkName: "pages/Requests/index" */))
+const _b4f40196 = () => interopDefault(import('../pages/auth/forgotPassword.vue' /* webpackChunkName: "pages/auth/forgotPassword" */))
+const _8b35260e = () => interopDefault(import('../pages/auth/signin.vue' /* webpackChunkName: "pages/auth/signin" */))
+const _62087922 = () => interopDefault(import('../pages/auth/signup.vue' /* webpackChunkName: "pages/auth/signup" */))
 const _ac3c653c = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
@@ -48,6 +51,18 @@ export const routerOptions = {
     path: "/Requests",
     component: _5efa4a07,
     name: "Requests"
+  }, {
+    path: "/auth/forgotPassword",
+    component: _b4f40196,
+    name: "auth-forgotPassword"
+  }, {
+    path: "/auth/signin",
+    component: _8b35260e,
+    name: "auth-signin"
+  }, {
+    path: "/auth/signup",
+    component: _62087922,
+    name: "auth-signup"
   }, {
     path: "/",
     component: _ac3c653c,
