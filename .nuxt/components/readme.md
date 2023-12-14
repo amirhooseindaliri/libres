@@ -6,6 +6,7 @@ You can directly use them in pages and other components without the need to impo
 
 **Tip:** If a component is conditionally rendered with `v-if` and is big, it is better to use `Lazy` or `lazy-` prefix to lazy load.
 
+- `<DatePicker>` | `<date-picker>` (components/DatePicker.vue)
 - `<Header>` | `<header>` (components/Header.vue)
 - `<Sidebar>` | `<sidebar>` (components/Sidebar.vue)
 - `<AppIconsBottomArrow>` | `<app-icons-bottom-arrow>` (components/appIcons/BottomArrow.vue)

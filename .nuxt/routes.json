@@ -38,6 +38,27 @@
     "chunkName": "pages/Requests/index"
   },
   {
+    "name": "auth-forgotPassword",
+    "path": "/auth/forgotPassword",
+    "component": "/home/ah.daliry/Documents/myproject/libres/pages/auth/forgotPassword.vue",
+    "chunkName": "pages/auth/forgotPassword",
+    "_name": "_b4f40196"
+  },
+  {
+    "name": "auth-signin",
+    "path": "/auth/signin",
+    "component": "/home/ah.daliry/Documents/myproject/libres/pages/auth/signin.vue",
+    "chunkName": "pages/auth/signin",
+    "_name": "_8b35260e"
+  },
+  {
+    "name": "auth-signup",
+    "path": "/auth/signup",
+    "component": "/home/ah.daliry/Documents/myproject/libres/pages/auth/signup.vue",
+    "chunkName": "pages/auth/signup",
+    "_name": "_62087922"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "P:\\\\amir-hossein-dalir\\\\libres\\\\pages\\\\index.vue",

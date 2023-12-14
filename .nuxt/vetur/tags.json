@@ -1,4 +1,7 @@
 {
+  "DatePicker": {
+    "description": "Auto imported from components/DatePicker.vue"
+  },
   "Header": {
     "description": "Auto imported from components/Header.vue"
   },
