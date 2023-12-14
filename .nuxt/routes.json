@@ -2,52 +2,45 @@
   {
     "name": "Book",
     "path": "/Book",
-    "component": "/home/ah.daliry/Documents/myproject/libres/pages/Book.vue",
+    "component": "P:\\\\amir-hossein-dalir\\\\libres\\\\pages\\\\Book.vue",
     "chunkName": "pages/Book",
     "children": [
       {
         "name": "Book-StudentsBook",
         "path": "StudentsBook",
-        "component": "/home/ah.daliry/Documents/myproject/libres/pages/Book/StudentsBook.vue",
-        "chunkName": "pages/Book/StudentsBook",
-        "_name": "_4ae18417"
+        "component": "P:\\\\amir-hossein-dalir\\\\libres\\\\pages\\\\Book\\\\StudentsBook.vue",
+        "chunkName": "pages/Book/StudentsBook"
       },
       {
         "name": "Book-videos",
         "path": "videos",
-        "component": "/home/ah.daliry/Documents/myproject/libres/pages/Book/videos.vue",
-        "chunkName": "pages/Book/videos",
-        "_name": "_606a34a4"
+        "component": "P:\\\\amir-hossein-dalir\\\\libres\\\\pages\\\\Book\\\\videos.vue",
+        "chunkName": "pages/Book/videos"
       },
       {
         "name": "Book-Workbook",
         "path": "Workbook",
-        "component": "/home/ah.daliry/Documents/myproject/libres/pages/Book/Workbook.vue",
-        "chunkName": "pages/Book/Workbook",
-        "_name": "_7d701120"
+        "component": "P:\\\\amir-hossein-dalir\\\\libres\\\\pages\\\\Book\\\\Workbook.vue",
+        "chunkName": "pages/Book/Workbook"
       }
-    ],
-    "_name": "_16f3cb29"
+    ]
   },
   {
     "name": "Profile",
     "path": "/Profile",
-    "component": "/home/ah.daliry/Documents/myproject/libres/pages/Profile/index.vue",
-    "chunkName": "pages/Profile/index",
-    "_name": "_9e56b748"
+    "component": "P:\\\\amir-hossein-dalir\\\\libres\\\\pages\\\\Profile\\\\index.vue",
+    "chunkName": "pages/Profile/index"
   },
   {
     "name": "Requests",
     "path": "/Requests",
-    "component": "/home/ah.daliry/Documents/myproject/libres/pages/Requests/index.vue",
-    "chunkName": "pages/Requests/index",
-    "_name": "_5efa4a07"
+    "component": "P:\\\\amir-hossein-dalir\\\\libres\\\\pages\\\\Requests\\\\index.vue",
+    "chunkName": "pages/Requests/index"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/home/ah.daliry/Documents/myproject/libres/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_ac3c653c"
+    "component": "P:\\\\amir-hossein-dalir\\\\libres\\\\pages\\\\index.vue",
+    "chunkName": "pages/index"
   }
 ]
