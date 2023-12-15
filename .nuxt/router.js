@@ -4,13 +4,17 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _16f3cb29 = () => interopDefault(import('../pages/Book.vue' /* webpackChunkName: "pages/Book" */))
-const _4ae18417 = () => interopDefault(import('../pages/Book/StudentsBook.vue' /* webpackChunkName: "pages/Book/StudentsBook" */))
-const _606a34a4 = () => interopDefault(import('../pages/Book/videos.vue' /* webpackChunkName: "pages/Book/videos" */))
-const _7d701120 = () => interopDefault(import('../pages/Book/Workbook.vue' /* webpackChunkName: "pages/Book/Workbook" */))
-const _9e56b748 = () => interopDefault(import('../pages/Profile/index.vue' /* webpackChunkName: "pages/Profile/index" */))
-const _5efa4a07 = () => interopDefault(import('../pages/Requests/index.vue' /* webpackChunkName: "pages/Requests/index" */))
-const _ac3c653c = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _2f588c34 = () => interopDefault(import('..\\pages\\Book.vue' /* webpackChunkName: "pages/Book" */))
+const _add5bdda = () => interopDefault(import('..\\pages\\Book\\Practice\\index.vue' /* webpackChunkName: "pages/Book/Practice/index" */))
+const _53a88af5 = () => interopDefault(import('..\\pages\\Book\\StudentsBook.vue' /* webpackChunkName: "pages/Book/StudentsBook" */))
+const _bec029e8 = () => interopDefault(import('..\\pages\\Book\\videos.vue' /* webpackChunkName: "pages/Book/videos" */))
+const _9e1dc564 = () => interopDefault(import('..\\pages\\Book\\Workbook.vue' /* webpackChunkName: "pages/Book/Workbook" */))
+const _7b6dbdd8 = () => interopDefault(import('..\\pages\\Profile\\index.vue' /* webpackChunkName: "pages/Profile/index" */))
+const _3f7088da = () => interopDefault(import('..\\pages\\Requests\\index.vue' /* webpackChunkName: "pages/Requests/index" */))
+const _acd18e9e = () => interopDefault(import('..\\pages\\auth\\forgotPassword.vue' /* webpackChunkName: "pages/auth/forgotPassword" */))
+const _52d43b16 = () => interopDefault(import('..\\pages\\auth\\signin.vue' /* webpackChunkName: "pages/auth/signin" */))
+const _29a78e2a = () => interopDefault(import('..\\pages\\auth\\signup.vue' /* webpackChunkName: "pages/auth/signup" */))
+const _c3d5a492 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -28,6 +32,10 @@ export const routerOptions = {
     component: _2f588c34,
     name: "Book",
     children: [{
+      path: "Practice",
+      component: _add5bdda,
+      name: "Book-Practice"
+    }, {
       path: "StudentsBook",
       component: _53a88af5,
       name: "Book-StudentsBook"
@@ -50,15 +58,15 @@ export const routerOptions = {
     name: "Requests"
   }, {
     path: "/auth/forgotPassword",
-    component: _b4f40196,
+    component: _acd18e9e,
     name: "auth-forgotPassword"
   }, {
     path: "/auth/signin",
-    component: _8b35260e,
+    component: _52d43b16,
     name: "auth-signin"
   }, {
     path: "/auth/signup",
-    component: _62087922,
+    component: _29a78e2a,
     name: "auth-signup"
   }, {
     path: "/",

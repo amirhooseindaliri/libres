@@ -8,6 +8,7 @@ You can directly use them in pages and other components without the need to impo
 
 - `<DatePicker>` | `<date-picker>` (components/DatePicker.vue)
 - `<Header>` | `<header>` (components/Header.vue)
+- `<Loading>` | `<loading>` (components/Loading.vue)
 - `<Sidebar>` | `<sidebar>` (components/Sidebar.vue)
 - `<AppIconsBottomArrow>` | `<app-icons-bottom-arrow>` (components/appIcons/BottomArrow.vue)
 - `<AppIconsNextIcon>` | `<app-icons-next-icon>` (components/appIcons/NextIcon.vue)

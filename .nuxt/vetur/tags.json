@@ -5,6 +5,9 @@
   "Header": {
     "description": "Auto imported from components/Header.vue"
   },
+  "Loading": {
+    "description": "Auto imported from components/Loading.vue"
+  },
   "Sidebar": {
     "description": "Auto imported from components/Sidebar.vue"
   },
