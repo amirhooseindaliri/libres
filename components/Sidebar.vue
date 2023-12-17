@@ -23,26 +23,22 @@
         </li>
         <li
           id="largestatebtn"
-          style="
-             {
-              display: none;
-              background-color: #60e7c8;
-              padding: 8px;
-            }
-          "
+          :style="{
+            display: 'none',
+            backgroundColor: '#60e7c8',
+            padding: '8px',
+          }"
         >
           <a
             id="sidebarCollapseMobileMode"
-            style="
-               {
-                border-bottom: none;
-                float: right;
-                direction: rtl;
-                width: 100%;
-                height: 100%;
-                cursor: pointer;
-              }
-            "
+            :style="{
+              borderBottom: 'none',
+              float: 'right',
+              direction: 'rtl',
+              width: '100%',
+              height: '100%',
+              cursor: 'pointer',
+            }"
           >
             <img src="./../assets/images/burger-line.png" />
           </a>
@@ -126,13 +122,11 @@
       <div class="container-fluid">
         <button
           class="btn btn-dark d-inline-block d-lg-none ml-auto"
-          style="
-             {
-              margin-right: auto !important;
-              margin-left: unset !important;
-              display: none !important;
-            }
-          "
+          :style="{
+            marginRight: 'auto !important',
+            marginLeft: 'unset !important',
+            display: 'none !important',
+          }"
           type="button"
           data-toggle="collapse"
           data-target="#navbarSupportedContent"

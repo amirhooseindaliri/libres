@@ -12,8 +12,9 @@ import '..\\node_modules\\@mdi\\font\\css\\materialdesignicons.min.css'
 
 import _e2391130 from '..\\layouts\\authLayout.vue'
 import _6f6c098b from '..\\layouts\\default.vue'
+import _7653b5bb from '..\\layouts\\practiceLayout.vue'
 
-const layouts = { "_authLayout": sanitizeComponent(_e2391130),"_default": sanitizeComponent(_6f6c098b) }
+const layouts = { "_authLayout": sanitizeComponent(_e2391130),"_default": sanitizeComponent(_6f6c098b),"_practiceLayout": sanitizeComponent(_7653b5bb) }
 
 export default {
   render (h, props) {
