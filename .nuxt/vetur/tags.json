@@ -1,6 +1,15 @@
 {
+  "BoxModelPractice": {
+    "description": "Auto imported from components/BoxModelPractice.vue"
+  },
   "DatePicker": {
     "description": "Auto imported from components/DatePicker.vue"
+  },
+  "ExtralistButtonPractice": {
+    "description": "Auto imported from components/ExtralistButtonPractice.vue"
+  },
+  "ExtraListPractice": {
+    "description": "Auto imported from components/ExtraListPractice.vue"
   },
   "Header": {
     "description": "Auto imported from components/Header.vue"
@@ -8,8 +17,26 @@
   "Loading": {
     "description": "Auto imported from components/Loading.vue"
   },
+  "NavPractice": {
+    "description": "Auto imported from components/NavPractice.vue"
+  },
+  "QuestiontitlePractice": {
+    "description": "Auto imported from components/QuestiontitlePractice.vue"
+  },
+  "SentenceBlank": {
+    "description": "Auto imported from components/SentenceBlank.vue"
+  },
+  "SentencePractice": {
+    "description": "Auto imported from components/SentencePractice.vue"
+  },
   "Sidebar": {
     "description": "Auto imported from components/Sidebar.vue"
+  },
+  "TablePractice": {
+    "description": "Auto imported from components/TablePractice.vue"
+  },
+  "WordBoxPractice": {
+    "description": "Auto imported from components/WordBoxPractice.vue"
   },
   "AppIconsBottomArrow": {
     "description": "Auto imported from components/appIcons/BottomArrow.vue"

@@ -1,0 +1,151 @@
+{
+  "book_id": 1,
+  "exercise_section_id": 1,
+  "exercize_tag_id": 1,
+  "exercize_number": 1,
+  "exercize_name": "Exercize 1",
+  "body": [
+    {
+      "type": "sentence",
+      "title": null,
+      "style": {
+        "color": "black"
+      },
+      "className": "",
+      "contentsType": "text",
+      "contents": ["Complete the sentences with the words in the box."],
+      "remaining_words": null,
+      "chosen": null,
+      "correct": null,
+      "draggable": false,
+      "words": null,
+      "inside_media": null,
+      "delimiter": null,
+      "body": null
+    },
+    {
+      "type": "box",
+      "title": null,
+      "style": {
+        "maxHeight": "64vh !important",
+        "overflowY": "auto",
+        "marginTop": "15px",
+        "borderRadius": " 5px",
+        "boxShadow": "0px 0px 5px 2px gray",
+        "padding": "15px",
+        "marginBottom": "10px"
+      },
+      "className": "col-md-12",
+      "contentsType": "text",
+      "contents": ["Complete the sentences with the words in the box."],
+      "remaining_words": null,
+      "chosen": null,
+      "correct": null,
+      "draggable": false,
+      "words": null,
+      "inside_media": null,
+      "delimiter": null,
+      "body": [
+        {
+          "type": "words_box",
+          "title": null,
+          "style": {},
+          "className": "col-md-12",
+          "contentsType": "text",
+          "contents": ["Elena", "Spain", "Amy", "cat", "friends", "Tom", "red"],
+          "remaining_words": null,
+          "chosen": null,
+          "correct": null,
+          "draggable": true,
+          "words": null,
+          "inside_media": null,
+          "delimiter": "|",
+          "body": null
+        },
+        {
+          "type": "table",
+          "title": null,
+          "style": {},
+          "className": "",
+          "contentsType": "image",
+          "contents": [
+            "https://ftp.lib-res.info/BigBangFiles/PracticeCkEditorImage/29/1d1d4922cbf346a1b40575bfd0e4b5c8.JPG",
+            "https://ftp.lib-res.info/BigBangFiles/PracticeCkEditorImage/29/4be037e5c1ab40268ee2f7c2ee25ea65.JPG",
+            "https://ftp.lib-res.info/BigBangFiles/PracticeCkEditorImage/29/1d1d4922cbf346a1b40575bfd0e4b5c8.JPG",
+            "https://ftp.lib-res.info/BigBangFiles/PracticeCkEditorImage/29/4be037e5c1ab40268ee2f7c2ee25ea65.JPG"
+          ],
+          "remaining_words": null,
+          "chosen": null,
+          "correct": null,
+          "draggable": true,
+          "words": null,
+          "inside_media": null,
+          "delimiter": "|",
+          "body": null
+        },
+        {
+          "type": "sentence_blank",
+          "title": null,
+          "style": {
+            "color": "black"
+          },
+          "className": "",
+          "contentsType": "text",
+          "contents": [
+            "1-Hi, I'm Lucas&nbsp; &nbsp;. I'm from&nbsp;&nbsp; WORD_GENERATE"
+          ],
+          "remaining_words": null,
+          "chosen": null,
+          "correct": null,
+          "draggable": false,
+          "words": [
+            {
+              "type": "solid_boxed",
+              "box_color": "#d6d8d9",
+              "limit_count": null,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "Spain",
+              "chosen": "Amy"
+            }
+          ],
+          "inside_media": null,
+          "delimiter": null,
+          "body": null
+        },
+        {
+          "type": "sentence_blank",
+          "title": null,
+          "style": {
+            "color": "black"
+          },
+          "className": "",
+          "contentsType": "text",
+          "contents": [
+            "2-&nbsp;Hello. I'm&nbsp;WORD_GENERATE&nbsp;. I've got a&nbsp;WORD_GENERATE"
+          ],
+          "remaining_words": null,
+          "chosen": null,
+          "correct": null,
+          "draggable": false,
+          "words": [
+            {
+              "type": "solid_boxed",
+              "box_color": "#d6d8d9",
+              "limit_count": null,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "Spain",
+              "chosen": "Amy"
+            }
+          ],
+          "inside_media": null,
+          "delimiter": null,
+          "body": null
+        }
+      ]
+    }
+  ]
+}
