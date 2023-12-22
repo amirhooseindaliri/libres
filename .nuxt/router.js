@@ -12,6 +12,7 @@ const _9e1dc564 = () => interopDefault(import('..\\pages\\Book\\Workbook.vue' /*
 const _7b6dbdd8 = () => interopDefault(import('..\\pages\\Profile\\index.vue' /* webpackChunkName: "pages/Profile/index" */))
 const _3f7088da = () => interopDefault(import('..\\pages\\Requests\\index.vue' /* webpackChunkName: "pages/Requests/index" */))
 const _2abc0c40 = () => interopDefault(import('..\\pages\\StartPractice\\index.vue' /* webpackChunkName: "pages/StartPractice/index" */))
+const _57bd30a5 = () => interopDefault(import('..\\pages\\test\\index.vue' /* webpackChunkName: "pages/test/index" */))
 const _acd18e9e = () => interopDefault(import('..\\pages\\auth\\forgotPassword.vue' /* webpackChunkName: "pages/auth/forgotPassword" */))
 const _52d43b16 = () => interopDefault(import('..\\pages\\auth\\signin.vue' /* webpackChunkName: "pages/auth/signin" */))
 const _29a78e2a = () => interopDefault(import('..\\pages\\auth\\signup.vue' /* webpackChunkName: "pages/auth/signup" */))
@@ -61,6 +62,10 @@ export const routerOptions = {
     path: "/StartPractice",
     component: _2abc0c40,
     name: "StartPractice"
+  }, {
+    path: "/test",
+    component: _57bd30a5,
+    name: "test"
   }, {
     path: "/auth/forgotPassword",
     component: _acd18e9e,

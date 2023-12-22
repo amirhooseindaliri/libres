@@ -8,7 +8,7 @@
       >
         <div style="margin: auto">
           <span href="#" id="Qsubject" style="padding: 0.5rem 1rem">{{
-            ecercise.exercize_name
+            exercize_name
           }}</span>
         </div>
       </div>
@@ -17,6 +17,6 @@
 </template>
 <script>
 export default {
-  props: ["ecercise"],
+  props: ["exercize_name"],
 };
 </script>

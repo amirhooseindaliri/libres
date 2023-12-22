@@ -5,8 +5,8 @@
       <table cellpadding="1" cellspacing="1" style="width: 500px">
         <tbody>
           <tr>
-            <td v-for="item in data.contents">
-              <img v-if="data.contentsType === 'image'" alt="" :src="item" />
+            <td v-for="item in data.hint">
+              <img v-if="data.hint_type === 'image'" alt="" :src="item" />
               <p v-else>{{ item }}</p>
             </td>
           </tr>

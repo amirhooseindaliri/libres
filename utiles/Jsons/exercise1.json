@@ -91,9 +91,7 @@
           },
           "className": "",
           "contentsType": "text",
-          "contents": [
-            "1-Hi, I'm Lucas&nbsp; &nbsp;. I'm from&nbsp;&nbsp; WORD_GENERATE"
-          ],
+          "contents": ["1-Hi, I'm Lucas  . I'm from  %"],
           "remaining_words": null,
           "chosen": null,
           "correct": null,
@@ -122,9 +120,7 @@
           },
           "className": "",
           "contentsType": "text",
-          "contents": [
-            "2-&nbsp;Hello. I'm&nbsp;WORD_GENERATE&nbsp;. I've got a&nbsp;WORD_GENERATE"
-          ],
+          "contents": ["2-Hello. I'm % . I've got a %"],
           "remaining_words": null,
           "chosen": null,
           "correct": null,

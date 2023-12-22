@@ -58,6 +58,13 @@
     "_name": "_2abc0c40"
   },
   {
+    "name": "test",
+    "path": "/test",
+    "component": "P:\\\\amir-hossein-dalir\\\\libres\\\\pages\\\\test\\\\index.vue",
+    "chunkName": "pages/test/index",
+    "_name": "_57bd30a5"
+  },
+  {
     "name": "auth-forgotPassword",
     "path": "/auth/forgotPassword",
     "component": "P:\\\\amir-hossein-dalir\\\\libres\\\\pages\\\\auth\\\\forgotPassword.vue",

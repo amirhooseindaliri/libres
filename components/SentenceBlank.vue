@@ -1,98 +1,89 @@
 <template>
   <div>
-    <template v-for="item in data.contents">
+    <template v-for="item in data.queries">
       <p class="mb-0">&nbsp;</p>
-      <div
-        id="div1"
-        ondrop="drop(event)"
-        ondragover="allowDrop(event)"
-        style="background-color: red; height: 100px; width: 100px"
-      ></div>
-      <p
-        style="font-size: 1rem"
-        :style="data.style"
-        class="mb-0"
-        v-html="generateQuestion(item)"
-      ></p>
+      <p style="font-size: 1rem" :style="data.query_style" class="mb-0">
+        <template v-for="(char, index) in item.sentence">
+          <template v-if="findIndexes(item.sentence).includes(index)">
+            <span
+              :id="`droppable${index}`"
+              class="alert alert-dark customewidth nulloption text-center"
+              @drop="onDrop($event, item, index, item.query_id)"
+              @dragenter.prevent
+              @dragover.prevent
+              :class="checkAnswer ? chosenColor(item, index) : null"
+            >
+              {{ chosenText(item, index) }} </span
+            ><input
+              type="text"
+              class="formstyle textoption"
+              id="droppable0txt"
+              style="display: none"
+            />
+          </template>
+          <template v-else>{{ char }}</template>
+        </template>
+      </p>
       <p class="mb-0">&nbsp;</p>
     </template>
   </div>
 </template>
 <script>
 export default {
-  props: ["data"],
+  props: ["data", "checkAnswer"],
   methods: {
-    generateQuestion(question) {
-      let counter = 0;
-      let result = [];
-      const text = question;
-      const indexes = this.findIndexes(text);
-      const inputText = this.createInputElement();
-      const splitText = text
-        .split("WORD_GENERATE")
-        .filter((item) => item !== "");
-      splitText.map((textSplit, index) => {
-        let totalIndex = 0;
-        if (index > 0) {
-          totalIndex = indexes[index] - indexes[index - 1] - 14;
-        } else {
-          totalIndex = indexes[index] - 1;
-        }
-        result.push(this.replaceAtIndex(textSplit, inputText, totalIndex));
-        totalIndex = totalIndex;
-      });
-      console.log(result.join(""));
-      return result.join("");
-
-      //   const index = text.find("WORD_GENERATE");
-
-      //   const newText = text.replace("WORD_GENERATE", inputText);
-      //   return newText;
-    },
-    createInputElement() {
-      return `<span
-                id="droppable0"
-                class="alert alert-dark customewidth nulloption"
-              ></span
-              ><input
-                type="text"
-                class="formstyle textoption"
-                id="droppable0txt"
-                style="display: none"
-              />`;
-    },
     findIndexes(str) {
       const string = str;
-      const regex = /WORD_GENERATE/g;
+      const regex = /%/g;
       const indexes = [];
       let match;
 
       while ((match = regex.exec(string)) !== null) {
         indexes.push(match.index);
       }
+      console.log(indexes);
       return indexes;
     },
-    replaceAtIndex(originalString, replacement, index) {
-      console.log(index);
-      if (index < 0 || index >= originalString.length) {
-        return originalString; // Index out of range, return the original string unchanged
+    onDrop(evt, itemData, index, query_id) {
+      const itemID = evt.dataTransfer.getData("item");
+      const newWords = itemData.words.map((item) => {
+        if (item.index == index) {
+          return { ...item, chosen: itemID };
+        } else {
+          return item;
+        }
+      });
+      this.$emit("dropSuccess", {
+        query_id,
+        newWords,
+      });
+    },
+    chosenText(item, index) {
+      const findIndex = item.words.findIndex((item) => {
+        return item.index === index;
+      });
+      if (findIndex >= 0) {
+        return item.words[findIndex].chosen;
+      } else {
+        return null;
       }
-      // Split the original string into two parts at the specified index
-      var leftPart = originalString.slice(0, index);
-      var rightPart = originalString.slice(index + 1);
-
-      // Concatenate the left part, replacement string, and right part
-      var modifiedString = leftPart + replacement + rightPart;
-
-      return modifiedString;
     },
-    drop(ev) {
-      ev.preventDefault();
-      var data = ev.dataTransfer.getData("text");
-      ev.target.appendChild(document.getElementById(data));
-    },
-    allowDrop(ev) {
-      ev.preventDefault();
+    chosenColor(item, index) {
+      console.log("chosen Color");
+      let color;
+      const findIndex = item.words.findIndex((item) => {
+        return item.index === index;
+      });
+      if (findIndex >= 0) {
+        const corrected =
+          item.words[findIndex].chosen === item.words[findIndex].correct;
+        if (corrected) {
+          color = "green--text";
+        } else {
+          color = "red--text";
+        }
+      }
+      return color;
     },
   },
 };
