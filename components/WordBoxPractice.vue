@@ -34,14 +34,11 @@ export default {
   props: ["data", "checkAnswer"],
   methods: {
     startDrag(evt, item) {
-      console.log(item);
       evt.dataTransfer.dropEffect = "move";
       evt.dataTransfer.effectAllowed = "move";
       evt.dataTransfer.setData("item", item);
     },
-    endDrag(item) {
-      console.log("end drag = ", item);
-    },
+    endDrag(item) {},
   },
 };
 </script>

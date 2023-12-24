@@ -8,6 +8,7 @@ You can directly use them in pages and other components without the need to impo
 
 - `<BoxModelPractice>` | `<box-model-practice>` (components/BoxModelPractice.vue)
 - `<DatePicker>` | `<date-picker>` (components/DatePicker.vue)
+- `<DropDownBlank>` | `<drop-down-blank>` (components/DropDownBlank.vue)
 - `<ExtralistButtonPractice>` | `<extralist-button-practice>` (components/ExtralistButtonPractice.vue)
 - `<ExtraListPractice>` | `<extra-list-practice>` (components/ExtraListPractice.vue)
 - `<Header>` | `<header>` (components/Header.vue)

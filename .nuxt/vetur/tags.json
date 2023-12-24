@@ -5,6 +5,9 @@
   "DatePicker": {
     "description": "Auto imported from components/DatePicker.vue"
   },
+  "DropDownBlank": {
+    "description": "Auto imported from components/DropDownBlank.vue"
+  },
   "ExtralistButtonPractice": {
     "description": "Auto imported from components/ExtralistButtonPractice.vue"
   },

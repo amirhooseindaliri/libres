@@ -60,8 +60,15 @@
                   <SentenceBlank
                     v-if="ecercise.body.query.query_type === 'sentence_blank'"
                     :data="ecercise.body.query"
-                    @dropSuccess="dropSuccess"
+                    @dropSuccess="Success"
                     :checkAnswer="ecercise.checkAnswer"
+                  />
+                  <DropDownBlank
+                    v-if="ecercise.body.query.query_type === 'drop_down_blank'"
+                    :data="ecercise.body.query"
+                    @selectSuccess="Success"
+                    :checkAnswer="ecercise.checkAnswer"
+                    :seeAnswer="ecercise.seeAnswer"
                   />
                 </div>
               </div>
@@ -81,33 +88,44 @@
                 style="position: fixed; bottom: 0; background: white; left: 0"
               >
                 <div class="row" style="direction: rtl">
-                  <div class="col-md-auto col-12 text-right">
+                  <div
+                    class="col-md-auto col-12 text-right"
+                    v-if="ecercise.checkAnswer === false"
+                  >
                     <a
                       @click="checkAnswer"
                       id="Regbtn"
-                      class="Regbtn btn btn-pink col-12 grayScale0--text"
+                      class="Regbtn btn btn-pink col-12 grayScale0--text py-1"
                       >Check answer</a
                     >
                   </div>
-                  <div class="col-md-auto col-12 text-right">
+                  <div
+                    class="col-md-auto col-12 text-right"
+                    v-if="ecercise.checkAnswer"
+                  >
                     <a
+                      @click="TryAgain"
                       id="TryAgain"
-                      class="TryAgain btn btn-dark col-12"
-                      style="color: white; display: none"
+                      class="TryAgain btn btn-dark col-12 py-1"
+                      style="color: white !important"
                       >Try again</a
                     >
                   </div>
-                  <div class="col-md-auto col-12 text-dark">
+                  <div
+                    class="col-md-auto btn col-12 text-dark"
+                    v-if="ecercise.checkAnswer"
+                  >
                     <a
+                      @click="SeeAnswer"
                       id="SeeAnswer"
-                      class="SeeAnswer btn btn-pink col-12"
-                      style="color: white; display: none"
+                      class="SeeAnswer btn btn-pink col-12 py-1"
+                      style="color: white !important"
                       >See Answer</a
                     >
                   </div>
                 </div>
               </div>
-              <div
+              <!-- <div
                 class="col-md-12 pb-2 d-md-none d-xl-none d-lg-none pt-2"
                 :style="{
                   position: 'fixed',
@@ -163,7 +181,7 @@
                     >
                   </div>
                 </div>
-              </div>
+              </div> -->
 
               <!-- Read more Modal Begin-->
               <!-- <div
@@ -378,8 +396,10 @@
   </div> -->
 </template>
 <script>
+import { match } from "assert";
 import JsonEcerciseOne from "./../../utiles/Jsons/exercise1.json";
 import ModeDragBlank from "./../../utiles/Jsons/ModeDragBlank.json";
+import DropDownBlank from "./../../utiles/Jsons/DropDownBlank.json";
 export default {
   layout: "practiceLayout",
   data() {
@@ -393,18 +413,20 @@ export default {
     };
   },
   mounted() {
-    this.ecercise = ModeDragBlank;
+    this.ecercise = DropDownBlank;
   },
   methods: {
     menuItems() {
       return this.menu;
     },
-    dropSuccess(data) {
+    Success(data) {
       const findIndex = this.ecercise.body.query.queries.findIndex(
         (item) => item.query_id === data.query_id
       );
       this.ecercise.body.query.queries[findIndex].words = data.newWords;
-      this.calcChosenWordBox();
+      if (this.ecercise.body.words_box) {
+        this.calcChosenWordBox();
+      }
     },
     calcChosenWordBox() {
       const RemoveItems = [];
@@ -424,12 +446,47 @@ export default {
     },
     checkAnswer() {
       this.ecercise.checkAnswer = true;
-      console.log();
-      // this.$swal({
-      //   icon: "error",
-      //   title: "Oops...",
-      //   text: "Something went wrong!",
-      // });
+      let corrected = 0;
+      let allQuestion = 0;
+      this.ecercise.body.query.queries.forEach((item) => {
+        item.words.forEach((word) => {
+          if (word.type === "solid_boxed" || word.type === "dorp_down") {
+            allQuestion++;
+            const is_correct = word.chosen === word.correct;
+            if (is_correct) {
+              corrected++;
+            }
+          }
+        });
+      });
+      const score = Math.floor((corrected / allQuestion) * 100);
+      this.ecercise.score = score;
+      if (score >= 50) {
+        this.$swal({
+          icon: "success",
+          title: "Good Job !",
+          text: `${corrected}/${allQuestion}  Try again to improve your score.`,
+        });
+      } else {
+        this.$swal({
+          icon: "error",
+          title: "Try harder",
+          text: `${corrected}/${allQuestion}  Try again to improve your score.`,
+        });
+      }
+    },
+    TryAgain() {},
+    SeeAnswer() {
+      this.ecercise.seeAnswer = true;
+      this.ecercise.body.query.queries = this.ecercise.body.query.queries.map(
+        (query) => {
+          const fixAnswer = query.words.map((Qword) => {
+            return { ...Qword, chosen: Qword.correct };
+          });
+          return { ...query, words: fixAnswer };
+        }
+      );
+      console.log(this.ecercise.body.query.queries);
     },
   },
 };

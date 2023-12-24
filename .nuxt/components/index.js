@@ -1,5 +1,6 @@
 export { default as BoxModelPractice } from '../..\\components\\BoxModelPractice.vue'
 export { default as DatePicker } from '../..\\components\\DatePicker.vue'
+export { default as DropDownBlank } from '../..\\components\\DropDownBlank.vue'
 export { default as ExtralistButtonPractice } from '../..\\components\\ExtralistButtonPractice.vue'
 export { default as ExtraListPractice } from '../..\\components\\ExtraListPractice.vue'
 export { default as Header } from '../..\\components\\Header.vue'

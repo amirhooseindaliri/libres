@@ -157,7 +157,6 @@ export default {
   },
   mounted() {
     this.$vuetify.goTo(0);
-    console.log(this.$route.query.bookid);
   },
 
   destroyed() {},

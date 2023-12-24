@@ -53,7 +53,6 @@ export default {
       return this.items.filter((item) => item.list === list);
     },
     startDrag(evt, item) {
-      console.log(item);
       evt.dataTransfer.dropEffect = "move";
       evt.dataTransfer.effectAllowed = "move";
       evt.dataTransfer.setData("itemID", item.id);
@@ -63,9 +62,7 @@ export default {
       const item = this.items.find((item) => item.id == itemID);
       item.list = list;
     },
-    endDrag(item) {
-      console.log("end drag = ", item);
-    },
+    endDrag(item) {},
   },
 };
 </script>

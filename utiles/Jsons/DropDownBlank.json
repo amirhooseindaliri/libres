@@ -3,15 +3,15 @@
   "exercise_section_id": 1,
   "exercize_tag_id": 1,
   "exercize_number": 1,
-  "exercize_name": "Exercize 1",
-  "mode": "drag_blank",
+  "exercize_name": " Exercise 2",
+  "mode": "drop_down_blank",
   "checkAnswer": false,
   "seeAnswer": false,
   "score": 0,
   "body": {
     "question": {
       "question_type": "text",
-      "question": ["Complete the sentences with the words in the box."],
+      "question": ["Choose the correct answer."],
       "question_style": {
         "color": "black"
       },
@@ -19,27 +19,10 @@
     },
     "box_style": {},
     "box_class": "col-md-12",
-    "words_box": {
-      "words_box_type": "text",
-      "words_box": ["Elena", "Spain", "Amy", "cat", "friends", "Tom", "red"],
-      "words_box_style": {},
-      "words_box_class": "col-md-12",
-      "words_box_delimiter": "|",
-      "words_box_draggable": true
-    },
-    "hint": {
-      "hint_type": "image",
-      "hint": [
-        "https://ftp.lib-res.info/BigBangFiles/PracticeCkEditorImage/29/1d1d4922cbf346a1b40575bfd0e4b5c8.JPG",
-        "https://ftp.lib-res.info/BigBangFiles/PracticeCkEditorImage/29/4be037e5c1ab40268ee2f7c2ee25ea65.JPG",
-        "https://ftp.lib-res.info/BigBangFiles/PracticeCkEditorImage/29/1d1d4922cbf346a1b40575bfd0e4b5c8.JPG",
-        "https://ftp.lib-res.info/BigBangFiles/PracticeCkEditorImage/29/4be037e5c1ab40268ee2f7c2ee25ea65.JPG"
-      ],
-      "hint_style": {},
-      "hint_class": ""
-    },
+    "words_box": null,
+    "hint": {},
     "query": {
-      "query_type": "sentence_blank",
+      "query_type": "drop_down_blank",
       "query_style": {
         "color": "black"
       },
@@ -50,13 +33,13 @@
           "sentence": "1-Hi, I'm Lucas  . I'm from  %",
           "words": [
             {
-              "type": "solid_boxed",
+              "type": "dorp_down",
               "box_color": "#d6d8d9",
               "limit_count": null,
               "url": null,
               "guide_chars": null,
-              "options": null,
-              "correct": "Elena",
+              "options": ["am", "is"],
+              "correct": "am",
               "chosen": null,
               "index": 29
             }
@@ -67,24 +50,24 @@
           "sentence": "2-Hello. I'm % . I've got a %",
           "words": [
             {
-              "type": "solid_boxed",
+              "type": "dorp_down",
               "box_color": "#d6d8d9",
               "limit_count": null,
               "url": null,
               "guide_chars": null,
-              "options": null,
-              "correct": "Spain",
-              "chosen": null,
+              "options": ["are", "am"],
+              "correct": "am",
+              "chosen": "are",
               "index": 13
             },
             {
-              "type": "solid_boxed",
+              "type": "dorp_down",
               "box_color": "#d6d8d9",
               "limit_count": null,
               "url": null,
               "guide_chars": null,
-              "options": null,
-              "correct": "Amy",
+              "options": ["are", "is"],
+              "correct": "is",
               "chosen": null,
               "index": 28
             }
@@ -95,25 +78,25 @@
           "sentence": "3- Hi. I'm %  . My favourite colour is %",
           "words": [
             {
-              "type": "solid_boxed",
+              "type": "dorp_down",
               "box_color": "#d6d8d9",
               "limit_count": null,
               "url": null,
               "guide_chars": null,
-              "options": null,
-              "correct": "cat",
-              "chosen": null,
+              "options": ["am", "is"],
+              "correct": "am",
+              "chosen": "am",
               "index": 11
             },
             {
-              "type": "solid_boxed",
+              "type": "dorp_down",
               "box_color": "#d6d8d9",
               "limit_count": null,
               "url": null,
               "guide_chars": null,
-              "options": null,
-              "correct": "friends",
-              "chosen": null,
+              "options": ["am", "is"],
+              "correct": "am",
+              "chosen": "is",
               "index": 39
             }
           ]
@@ -123,25 +106,25 @@
           "sentence": "4- Hello. I'm % . I've got a lot of %",
           "words": [
             {
-              "type": "solid_boxed",
+              "type": "dorp_down",
               "box_color": "#d6d8d9",
               "limit_count": null,
               "url": null,
               "guide_chars": null,
-              "options": null,
-              "correct": "Tom",
-              "chosen": null,
+              "options": ["am", "is"],
+              "correct": "am",
+              "chosen": "is",
               "index": 14
             },
             {
-              "type": "solid_boxed",
+              "type": "dorp_down",
               "box_color": "#d6d8d9",
               "limit_count": null,
               "url": null,
               "guide_chars": null,
-              "options": null,
-              "correct": "red",
-              "chosen": null,
+              "options": ["am", "is"],
+              "correct": "am",
+              "chosen": "am",
               "index": 36
             }
           ]

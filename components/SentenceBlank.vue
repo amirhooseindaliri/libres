@@ -41,7 +41,6 @@ export default {
       while ((match = regex.exec(string)) !== null) {
         indexes.push(match.index);
       }
-      console.log(indexes);
       return indexes;
     },
     onDrop(evt, itemData, index, query_id) {
@@ -69,7 +68,6 @@ export default {
       }
     },
     chosenColor(item, index) {
-      console.log("chosen Color");
       let color;
       const findIndex = item.words.findIndex((item) => {
         return item.index === index;
