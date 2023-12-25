@@ -1,4 +1,5 @@
 export { default as BoxModelPractice } from '../..\\components\\BoxModelPractice.vue'
+export { default as ContainerDrag } from '../..\\components\\ContainerDrag.vue'
 export { default as DatePicker } from '../..\\components\\DatePicker.vue'
 export { default as DropDownBlank } from '../..\\components\\DropDownBlank.vue'
 export { default as ExtralistButtonPractice } from '../..\\components\\ExtralistButtonPractice.vue'

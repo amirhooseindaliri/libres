@@ -52,6 +52,7 @@
                     v-if="ecercise.body.words_box"
                     :data="ecercise.body.words_box"
                     :checkAnswer="ecercise.checkAnswer"
+                    :mode="ecercise.mode"
                   />
                   <HintPractice
                     v-if="ecercise.body.hint"
@@ -67,6 +68,13 @@
                     v-if="ecercise.body.query.query_type === 'drop_down_blank'"
                     :data="ecercise.body.query"
                     @selectSuccess="Success"
+                    :checkAnswer="ecercise.checkAnswer"
+                    :seeAnswer="ecercise.seeAnswer"
+                  />
+                  <ContainerDrag
+                    v-if="ecercise.body.query.query_type === 'box_drag'"
+                    :data="ecercise.body.query"
+                    @dropSuccess="Success"
                     :checkAnswer="ecercise.checkAnswer"
                     :seeAnswer="ecercise.seeAnswer"
                   />
@@ -400,6 +408,9 @@ import { match } from "assert";
 import JsonEcerciseOne from "./../../utiles/Jsons/exercise1.json";
 import ModeDragBlank from "./../../utiles/Jsons/ModeDragBlank.json";
 import DropDownBlank from "./../../utiles/Jsons/DropDownBlank.json";
+import ModeDragBox from "./../../utiles/Jsons/ModeDragBox.json";
+import ModeSimpleBlank from "./../../utiles/Jsons/ModeSimpleBlank.json";
+
 export default {
   layout: "practiceLayout",
   data() {
@@ -413,7 +424,7 @@ export default {
     };
   },
   mounted() {
-    this.ecercise = DropDownBlank;
+    this.ecercise = ModeSimpleBlank;
   },
   methods: {
     menuItems() {
@@ -424,12 +435,20 @@ export default {
         (item) => item.query_id === data.query_id
       );
       this.ecercise.body.query.queries[findIndex].words = data.newWords;
-      if (this.ecercise.body.words_box) {
+      if (
+        this.ecercise.body.words_box &&
+        (this.ecercise.mode === "drag_blank" ||
+          this.ecercise.mode === "drop_down_blank")
+      ) {
         this.calcChosenWordBox();
+      } else if (
+        this.ecercise.body.words_box &&
+        this.ecercise.mode === "drag_box"
+      ) {
+        this.calcChosenWordBoxDragBox();
       }
     },
     calcChosenWordBox() {
-      const RemoveItems = [];
       this.ecercise.body.query.queries.forEach((query) => [
         query.words.forEach((Qword) => {
           const hasItem = this.ecercise.body.words_box.words_box.includes(
@@ -444,6 +463,14 @@ export default {
         }),
       ]);
     },
+    calcChosenWordBoxDragBox() {
+      this.ecercise.body.query.queries.forEach((query) => [
+        (this.ecercise.body.words_box.words_box =
+          this.ecercise.body.words_box.words_box.filter((item) => {
+            return !query.words[0].chosen.includes(item);
+          })),
+      ]);
+    },
     checkAnswer() {
       this.ecercise.checkAnswer = true;
       let corrected = 0;
@@ -452,7 +479,8 @@ export default {
         item.words.forEach((word) => {
           if (word.type === "solid_boxed" || word.type === "dorp_down") {
             allQuestion++;
-            const is_correct = word.chosen === word.correct;
+            const is_correct =
+              JSON.stringify(word.chosen) === JSON.stringify(word.correct);
             if (is_correct) {
               corrected++;
             }
@@ -486,7 +514,6 @@ export default {
           return { ...query, words: fixAnswer };
         }
       );
-      console.log(this.ecercise.body.query.queries);
     },
   },
 };

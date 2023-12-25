@@ -1,0 +1,135 @@
+{
+  "book_id": 1,
+  "exercise_section_id": 1,
+  "exercize_tag_id": 1,
+  "exercize_number": 1,
+  "exercize_name": "Exercize 1",
+  "mode": "simple_blank",
+  "checkAnswer": false,
+  "seeAnswer": false,
+  "score": 0,
+  "body": {
+    "question": {
+      "question_type": "text",
+      "question": ["Complete the sentences with the words in the box."],
+      "question_style": {
+        "color": "black"
+      },
+      "class_question": ""
+    },
+    "box_style": {},
+    "box_class": "col-md-12",
+    "words_box": null,
+    "hint": {},
+    "query": {
+      "query_type": "sentence_blank",
+      "query_style": {
+        "color": "black"
+      },
+      "query_class": "",
+      "queries": [
+        {
+          "query_id": 1,
+          "sentence": "1-Hi, I'm Lucas  . I'm from  %",
+          "words": [
+            {
+              "type": "solid_boxed",
+              "box_color": "#d6d8d9",
+              "limit_count": null,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "Elena",
+              "chosen": null,
+              "index": 29
+            }
+          ]
+        },
+        {
+          "query_id": 2,
+          "sentence": "2-Hello. I'm % . I've got a %",
+          "words": [
+            {
+              "type": "solid_boxed",
+              "box_color": "#d6d8d9",
+              "limit_count": null,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "Spain",
+              "chosen": null,
+              "index": 13
+            },
+            {
+              "type": "solid_boxed",
+              "box_color": "#d6d8d9",
+              "limit_count": null,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "Amy",
+              "chosen": null,
+              "index": 28
+            }
+          ]
+        },
+        {
+          "query_id": 3,
+          "sentence": "3- Hi. I'm %  . My favourite colour is %",
+          "words": [
+            {
+              "type": "solid_boxed",
+              "box_color": "#d6d8d9",
+              "limit_count": null,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "cat",
+              "chosen": null,
+              "index": 11
+            },
+            {
+              "type": "solid_boxed",
+              "box_color": "#d6d8d9",
+              "limit_count": null,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "friends",
+              "chosen": null,
+              "index": 39
+            }
+          ]
+        },
+        {
+          "query_id": 4,
+          "sentence": "4- Hello. I'm % . I've got a lot of %",
+          "words": [
+            {
+              "type": "solid_boxed",
+              "box_color": "#d6d8d9",
+              "limit_count": null,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "Tom",
+              "chosen": null,
+              "index": 14
+            },
+            {
+              "type": "solid_boxed",
+              "box_color": "#d6d8d9",
+              "limit_count": null,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "red",
+              "chosen": null,
+              "index": 36
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

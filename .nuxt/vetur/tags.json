@@ -2,6 +2,9 @@
   "BoxModelPractice": {
     "description": "Auto imported from components/BoxModelPractice.vue"
   },
+  "ContainerDrag": {
+    "description": "Auto imported from components/ContainerDrag.vue"
+  },
   "DatePicker": {
     "description": "Auto imported from components/DatePicker.vue"
   },

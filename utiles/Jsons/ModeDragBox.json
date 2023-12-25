@@ -1,0 +1,92 @@
+{
+  "book_id": 1,
+  "exercise_section_id": 1,
+  "exercize_tag_id": 1,
+  "exercize_number": 1,
+  "exercize_name": "Exercize 1",
+  "mode": "drag_box",
+  "checkAnswer": false,
+  "seeAnswer": false,
+  "score": 0,
+  "body": {
+    "question": {
+      "question_type": "text",
+      "question": ["Complete the sentences with the words in the box."],
+      "question_style": {
+        "color": "black"
+      },
+      "class_question": ""
+    },
+    "box_style": {},
+    "box_class": "col-md-12",
+    "words_box": {
+      "words_box_type": "text",
+      "words_box": ["Elena", "Spain", "Amy", "cat", "friends", "Tom", "red"],
+      "words_box_style": {},
+      "words_box_class": "col-md-12",
+      "words_box_delimiter": "|",
+      "words_box_draggable": true
+    },
+    "hint": null,
+    "query": {
+      "query_type": "box_drag",
+      "query_style": {
+        "color": "black"
+      },
+      "query_class": "",
+      "queries": [
+        {
+          "query_id": 1,
+          "sentence": "Box 1",
+          "words": [
+            {
+              "type": "solid_boxed",
+              "box_color": "#d6d8d9",
+              "limit_count": null,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": ["Elena", "Spain"],
+              "chosen": [],
+              "index": null
+            }
+          ]
+        },
+        {
+          "query_id": 2,
+          "sentence": "Box 2",
+          "words": [
+            {
+              "type": "solid_boxed",
+              "box_color": "#d6d8d9",
+              "limit_count": null,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": ["Amy", "cat"],
+              "chosen": [],
+              "index": null
+            }
+          ]
+        },
+        {
+          "query_id": 3,
+          "sentence": "Box 3",
+          "words": [
+            {
+              "type": "solid_boxed",
+              "box_color": "#d6d8d9",
+              "limit_count": null,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": ["friends", "Tom", "red"],
+              "chosen": [],
+              "index": null
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

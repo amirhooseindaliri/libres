@@ -7,6 +7,7 @@ You can directly use them in pages and other components without the need to impo
 **Tip:** If a component is conditionally rendered with `v-if` and is big, it is better to use `Lazy` or `lazy-` prefix to lazy load.
 
 - `<BoxModelPractice>` | `<box-model-practice>` (components/BoxModelPractice.vue)
+- `<ContainerDrag>` | `<container-drag>` (components/ContainerDrag.vue)
 - `<DatePicker>` | `<date-picker>` (components/DatePicker.vue)
 - `<DropDownBlank>` | `<drop-down-blank>` (components/DropDownBlank.vue)
 - `<ExtralistButtonPractice>` | `<extralist-button-practice>` (components/ExtralistButtonPractice.vue)
