@@ -54,27 +54,6 @@
 export default {
   props: ["data", "checkAnswer", "seeAnswer"],
   methods: {
-    findIndexes(str) {
-      const string = str;
-      const regex = /%/g;
-      const indexes = [];
-      let match;
-
-      while ((match = regex.exec(string)) !== null) {
-        indexes.push(match.index);
-      }
-      return indexes;
-    },
-    chosenText(item, index) {
-      const findIndex = item.words.findIndex((item) => {
-        return item.index === index;
-      });
-      if (findIndex >= 0) {
-        return item.words[findIndex].chosen;
-      } else {
-        return null;
-      }
-    },
     chosenColor(option, correct, chosen) {
       let className = "";
       if (this.checkAnswer || this.seeAnswer) {
@@ -97,16 +76,6 @@ export default {
         query_id,
         newWords,
       });
-    },
-    chosenItem(item, index) {
-      const findIndex = item.words.findIndex((item) => {
-        return item.index === index;
-      });
-      if (findIndex >= 0) {
-        return item.words[findIndex];
-      } else {
-        return null;
-      }
     },
     selectedOption(option, correct) {
       if (this.seeAnswer) {
