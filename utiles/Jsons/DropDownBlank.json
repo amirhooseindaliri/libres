@@ -31,8 +31,19 @@
       "queries": [
         {
           "query_id": 1,
-          "sentence": "1-Hi, I'm Lucas  . I'm from  %",
+          "sentence": "1- % ~ %",
           "words": [
+            {
+              "type": "image",
+              "style": null,
+              "limit_count": null,
+              "url": "https://ftp.lib-res.info/BigBangFiles/PracticeCkEditorImage/29/1a43866499e743339781a9036d1f20fe.JPG",
+              "guide_chars": null,
+              "options": null,
+              "correct": null,
+              "chosen": null,
+              "index": 3
+            },
             {
               "type": "dorp_down",
               "style": "#d6d8d9",
@@ -42,7 +53,7 @@
               "options": ["am", "is"],
               "correct": "am",
               "chosen": null,
-              "index": 29
+              "index": 7
             }
           ]
         },

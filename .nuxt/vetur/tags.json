@@ -35,6 +35,9 @@
   "QuestiontitlePractice": {
     "description": "Auto imported from components/QuestiontitlePractice.vue"
   },
+  "RadioPractice": {
+    "description": "Auto imported from components/RadioPractice.vue"
+  },
   "ReadMorePractice": {
     "description": "Auto imported from components/ReadMorePractice.vue"
   },

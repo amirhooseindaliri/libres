@@ -106,6 +106,13 @@
                     :seeAnswer="ecercise.seeAnswer"
                     :key="ecercise.seeAnswer"
                   />
+                  <RadioPractice
+                    v-if="ecercise.body.query.query_type === 'radio_chose'"
+                    :data="ecercise.body.query"
+                    @selectSuccess="Success"
+                    :checkAnswer="ecercise.checkAnswer"
+                    :seeAnswer="ecercise.seeAnswer"
+                  />
                 </div>
               </div>
               <div
@@ -167,6 +174,7 @@ import ModeDragBox from "./../../utiles/Jsons/ModeDragBox.json";
 import ModeSimpleBlank from "./../../utiles/Jsons/ModeSimpleBlank.json";
 import SimpleBlankWIthImage from "./../../utiles/Jsons/SimpleBlankWIthImage.json";
 import ModeDragInside from "./../../utiles/Jsons/ModeDragInside.json";
+import ModeRadioChose from "./../../utiles/Jsons/ModeRadioChose.json";
 
 export default {
   layout: "practiceLayout",
@@ -181,7 +189,7 @@ export default {
     };
   },
   mounted() {
-    this.ecercise = ModeDragInside;
+    this.ecercise = ModeRadioChose;
   },
   methods: {
     menuItems() {
@@ -243,7 +251,8 @@ export default {
             word.type === "solid_boxed" ||
             word.type === "dorp_down" ||
             word.type === "simple_blank" ||
-            word.type === "drag_inside"
+            word.type === "drag_inside" ||
+            word.type === "radio_chose"
           ) {
             allQuestion++;
             const is_correct =

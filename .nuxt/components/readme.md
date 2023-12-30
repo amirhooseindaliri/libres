@@ -18,6 +18,7 @@ You can directly use them in pages and other components without the need to impo
 - `<Loading>` | `<loading>` (components/Loading.vue)
 - `<NavPractice>` | `<nav-practice>` (components/NavPractice.vue)
 - `<QuestiontitlePractice>` | `<questiontitle-practice>` (components/QuestiontitlePractice.vue)
+- `<RadioPractice>` | `<radio-practice>` (components/RadioPractice.vue)
 - `<ReadMorePractice>` | `<read-more-practice>` (components/ReadMorePractice.vue)
 - `<SentenceBlank>` | `<sentence-blank>` (components/SentenceBlank.vue)
 - `<SentencePractice>` | `<sentence-practice>` (components/SentencePractice.vue)

@@ -4,8 +4,17 @@
       <p class="mb-0">&nbsp;</p>
       <p style="font-size: 1rem" :style="data.query_style" class="mb-0">
         <template v-for="(char, index) in item.sentence">
-          <template v-if="findIndexes(item.sentence).includes(index)">
+          <template v-if="char === '~'">
+            <br />
+          </template>
+          <template v-else-if="findIndexes(item.sentence).includes(index)">
+            <img
+              v-if="chosenItem(item, index).type === 'image'"
+              alt=""
+              :src="chosenItem(item, index).url"
+            />
             <select
+              v-if="chosenItem(item, index).type === 'dorp_down'"
               class="select-css selectoption"
               @change="changeSelect($event, item, index, item.query_id)"
               :class="chosenColor(item, index)"
@@ -105,6 +114,16 @@ export default {
         }
       } else {
         return "selected";
+      }
+    },
+    chosenItem(item, index) {
+      const findIndex = item.words.findIndex((item) => {
+        return item.index === index;
+      });
+      if (findIndex >= 0) {
+        return item.words[findIndex];
+      } else {
+        return null;
       }
     },
   },

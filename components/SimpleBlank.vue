@@ -11,7 +11,7 @@
             <img
               v-if="chosenItem(item, index).type === 'image'"
               alt=""
-              src="https://ftp.lib-res.info/BigBangFiles/PracticeCkEditorImage/29/656bdc7f3fd94aefbb01774abc3f5603.jpg"
+              :src="chosenItem(item, index).url"
             />
             <input
               v-if="chosenItem(item, index).type === 'simple_blank'"

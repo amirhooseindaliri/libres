@@ -1,0 +1,86 @@
+{
+  "book_id": 1,
+  "exercise_section_id": 1,
+  "exercize_tag_id": 1,
+  "exercize_number": 1,
+  "exercize_name": " Exercise 2",
+  "mode": "radio_chose",
+  "checkAnswer": false,
+  "seeAnswer": false,
+  "score": 0,
+  "body": {
+    "question": {
+      "question_type": "text",
+      "question": "Choose the correct answer.",
+      "question_style": {
+        "color": "black",
+        "spans": null
+      },
+      "class_question": ""
+    },
+    "box_style": {},
+    "box_class": "col-md-12",
+    "words_box": null,
+    "hint": null,
+    "query": {
+      "query_type": "radio_chose",
+      "query_style": {
+        "color": "black"
+      },
+      "query_class": "",
+      "queries": [
+        {
+          "query_id": 1,
+          "sentence": "",
+          "words": [
+            {
+              "type": "radio_chose",
+              "style": "#d6d8d9",
+              "limit_count": null,
+              "url": null,
+              "guide_chars": null,
+              "options": ["iran", "italy", "american", "turky"],
+              "correct": "american",
+              "chosen": null,
+              "index": null
+            }
+          ]
+        },
+        {
+          "query_id": 2,
+          "sentence": "",
+          "words": [
+            {
+              "type": "radio_chose",
+              "style": "#d6d8d9",
+              "limit_count": null,
+              "url": null,
+              "guide_chars": null,
+              "options": ["iran", "italy", "american", "turky"],
+              "correct": "iran",
+              "chosen": null,
+              "index": null
+            }
+          ]
+        },
+        {
+          "query_id": 3,
+          "sentence": "",
+          "words": [
+            {
+              "type": "radio_chose",
+              "style": "#d6d8d9",
+              "limit_count": null,
+              "url": null,
+              "guide_chars": null,
+              "options": ["iran", "italy", "american", "turky"],
+              "correct": "turky",
+              "chosen": null,
+              "index": null
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
