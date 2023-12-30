@@ -101,9 +101,10 @@
                   <DragInsidePractice
                     v-if="ecercise.body.query.query_type === 'drag_inside'"
                     :data="ecercise.body.query"
-                    @changeSuccess="Success"
+                    @changeSuccess="SuccessDragInside"
                     :checkAnswer="ecercise.checkAnswer"
                     :seeAnswer="ecercise.seeAnswer"
+                    :key="ecercise.seeAnswer"
                   />
                 </div>
               </div>
@@ -205,6 +206,10 @@ export default {
         this.calcChosenWordBoxDragBox();
       }
     },
+    SuccessDragInside(data) {
+      this.ecercise.body.query.queries = data;
+      console.log(this.ecercise.body.query.queries);
+    },
     calcChosenWordBox() {
       this.ecercise.body.query.queries.forEach((query) => [
         query.words.forEach((Qword) => {
@@ -237,7 +242,8 @@ export default {
           if (
             word.type === "solid_boxed" ||
             word.type === "dorp_down" ||
-            word.type === "simple_blank"
+            word.type === "simple_blank" ||
+            word.type === "drag_inside"
           ) {
             allQuestion++;
             const is_correct =

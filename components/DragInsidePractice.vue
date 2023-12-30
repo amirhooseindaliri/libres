@@ -1,25 +1,26 @@
 <template>
   <div>
     <div class="col-md-12 mb-3" v-for="(query, index) in queries">
-      <div class="row sortcheck brokenoption" id="sortable_11583">
+      <div>
         <draggable
           v-model="queries[index].words[0].chosen"
           @change="onListUpdate"
+          class="row sortcheck brokenoption"
         >
           <div
-            v-for="item in queries[index].words[0].chosen"
+            v-for="(item, indexItem) in queries[index].words[0].chosen"
             data-id="friend"
             :draggable="true"
             class="col-md-auto BrokenSentenceOption"
+            :class="
+              chosenColor(item, indexItem, queries[index].words[0].correct)
+            "
           >
             {{ item }}
           </div>
         </draggable>
       </div>
     </div>
-    <draggable v-model="list" @change="onListUpdate">
-      <div v-for="(item, index) in list" :key="index">{{ item }}</div>
-    </draggable>
   </div>
 </template>
 <script>
@@ -29,6 +30,9 @@ export default {
   components: {
     draggable,
   },
+  mounted() {
+    console.log("aaaaaaaa", this.seeAnswer);
+  },
   data() {
     return {
       queries: this.data.queries,
@@ -36,9 +40,24 @@ export default {
     };
   },
   methods: {
-    onListUpdate(event) {
-      // Do something with the updated list
-      console.log(this.queries);
+    onListUpdate() {
+      this.$emit("changeSuccess", this.queries);
+    },
+    chosenColor(item, indexItem, correctList) {
+      if (this.checkAnswer || this.seeAnswer) {
+        let className;
+        const findIndex = correctList.findIndex((i) => {
+          return i === item;
+        });
+        if (findIndex === indexItem) {
+          className = "correctNullSpace";
+        } else {
+          className = "wrongNullSpace";
+        }
+        return className;
+      } else {
+        return "";
+      }
     },
   },
 };
