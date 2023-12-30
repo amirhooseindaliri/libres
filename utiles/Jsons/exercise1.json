@@ -13,7 +13,7 @@
       },
       "className": "",
       "contentsType": "text",
-      "contents": ["Complete the sentences with the words in the box."],
+      "contents": "Complete the sentences with the words in the box.",
       "remaining_words": null,
       "chosen": null,
       "correct": null,
@@ -99,7 +99,7 @@
           "words": [
             {
               "type": "solid_boxed",
-              "box_color": "#d6d8d9",
+              "style": "#d6d8d9",
               "limit_count": null,
               "url": null,
               "guide_chars": null,
@@ -128,7 +128,7 @@
           "words": [
             {
               "type": "solid_boxed",
-              "box_color": "#d6d8d9",
+              "style": "#d6d8d9",
               "limit_count": null,
               "url": null,
               "guide_chars": null,

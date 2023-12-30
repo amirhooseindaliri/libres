@@ -8,6 +8,9 @@
   "DatePicker": {
     "description": "Auto imported from components/DatePicker.vue"
   },
+  "DragInsidePractice": {
+    "description": "Auto imported from components/DragInsidePractice.vue"
+  },
   "DropDownBlank": {
     "description": "Auto imported from components/DropDownBlank.vue"
   },
@@ -32,6 +35,9 @@
   "QuestiontitlePractice": {
     "description": "Auto imported from components/QuestiontitlePractice.vue"
   },
+  "ReadMorePractice": {
+    "description": "Auto imported from components/ReadMorePractice.vue"
+  },
   "SentenceBlank": {
     "description": "Auto imported from components/SentenceBlank.vue"
   },
@@ -40,6 +46,9 @@
   },
   "Sidebar": {
     "description": "Auto imported from components/Sidebar.vue"
+  },
+  "SimpleBlank": {
+    "description": "Auto imported from components/SimpleBlank.vue"
   },
   "WordBoxPractice": {
     "description": "Auto imported from components/WordBoxPractice.vue"

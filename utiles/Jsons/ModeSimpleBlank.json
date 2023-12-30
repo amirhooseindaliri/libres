@@ -11,9 +11,25 @@
   "body": {
     "question": {
       "question_type": "text",
-      "question": ["Complete the sentences with the words in the box."],
+      "question": "1- a ball $ $ the wardrobe",
       "question_style": {
-        "color": "black"
+        "color": "black",
+        "spans": [
+          {
+            "type": "span",
+            "backgroundColor": "#4e5f70",
+            "color": "#ffffff",
+            "text": "o",
+            "index": 10
+          },
+          {
+            "type": "span",
+            "backgroundColor": "#4e5f70",
+            "color": "#dddddd",
+            "text": "n",
+            "index": 12
+          }
+        ]
       },
       "class_question": ""
     },
@@ -22,7 +38,7 @@
     "words_box": null,
     "hint": {},
     "query": {
-      "query_type": "sentence_blank",
+      "query_type": "simple_blank",
       "query_style": {
         "color": "black"
       },
@@ -30,46 +46,49 @@
       "queries": [
         {
           "query_id": 1,
-          "sentence": "1-Hi, I'm Lucas  . I'm from  %",
+          "sentence": "1 A: Have you  got  a sister? ~  B: No, I %",
           "words": [
             {
-              "type": "solid_boxed",
-              "box_color": "#d6d8d9",
+              "type": "simple_blank",
+              "style": "#d6d8d9",
               "limit_count": null,
               "url": null,
               "guide_chars": null,
               "options": null,
               "correct": "Elena",
               "chosen": null,
-              "index": 29
+              "index": 42
             }
           ]
         },
         {
           "query_id": 2,
-          "sentence": "2-Hello. I'm % . I've got a %",
+          "sentence": "1 What's % ? %  a hat.",
           "words": [
             {
-              "type": "solid_boxed",
-              "box_color": "#d6d8d9",
+              "type": "span",
+              "style": {
+                "backgroundColor": "#4e5f70",
+                "color": "#ffffff"
+              },
               "limit_count": null,
               "url": null,
               "guide_chars": null,
               "options": null,
-              "correct": "Spain",
+              "correct": "this",
               "chosen": null,
-              "index": 13
+              "index": 9
             },
             {
-              "type": "solid_boxed",
-              "box_color": "#d6d8d9",
+              "type": "simple_blank",
+              "style": "#d6d8d9",
               "limit_count": null,
               "url": null,
               "guide_chars": null,
               "options": null,
               "correct": "Amy",
               "chosen": null,
-              "index": 28
+              "index": 13
             }
           ]
         },
@@ -78,8 +97,8 @@
           "sentence": "3- Hi. I'm %  . My favourite colour is %",
           "words": [
             {
-              "type": "solid_boxed",
-              "box_color": "#d6d8d9",
+              "type": "simple_blank",
+              "style": "#d6d8d9",
               "limit_count": null,
               "url": null,
               "guide_chars": null,
@@ -89,8 +108,8 @@
               "index": 11
             },
             {
-              "type": "solid_boxed",
-              "box_color": "#d6d8d9",
+              "type": "simple_blank",
+              "style": "#d6d8d9",
               "limit_count": null,
               "url": null,
               "guide_chars": null,
@@ -103,29 +122,62 @@
         },
         {
           "query_id": 4,
-          "sentence": "4- Hello. I'm % . I've got a lot of %",
+          "sentence": "2- a skateboard %%%%%  the wardrobe",
           "words": [
             {
-              "type": "solid_boxed",
-              "box_color": "#d6d8d9",
-              "limit_count": null,
+              "type": "simple_blank",
+              "style": "#d6d8d9",
+              "limit_count": 1,
               "url": null,
               "guide_chars": null,
               "options": null,
               "correct": "Tom",
               "chosen": null,
-              "index": 14
+              "index": 16
             },
             {
-              "type": "solid_boxed",
-              "box_color": "#d6d8d9",
-              "limit_count": null,
+              "type": "simple_blank",
+              "style": "#d6d8d9",
+              "limit_count": 1,
               "url": null,
               "guide_chars": null,
               "options": null,
-              "correct": "red",
+              "correct": "Tom",
               "chosen": null,
-              "index": 36
+              "index": 17
+            },
+            {
+              "type": "simple_blank",
+              "style": "#d6d8d9",
+              "limit_count": 1,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "Tom",
+              "chosen": null,
+              "index": 18
+            },
+            {
+              "type": "simple_blank",
+              "style": "#d6d8d9",
+              "limit_count": 1,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "Tom",
+              "chosen": null,
+              "index": 19
+            },
+            {
+              "type": "simple_blank",
+              "style": "#d6d8d9",
+              "limit_count": 1,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "Tom",
+              "chosen": null,
+              "index": 20
             }
           ]
         }

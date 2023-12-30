@@ -29,7 +29,7 @@
       "width": null,
       "height": null,
       "background_color": null,
-      "contents": ["Some sentences here ..."],
+      "contents": "Some sentences here ...",
       "remaining_words": null,
       "chosen": null,
       "correct": null,
@@ -107,7 +107,7 @@
             {
               "type": "blank",
               "size": "normal",
-              "box_color": null,
+              "style": null,
               "limit_count": null,
               "url": null,
               "guide_chars": null,
@@ -135,7 +135,7 @@
           "words": [
             {
               "type": "select_option",
-              "box_color": null,
+              "style": null,
               "limit_count": null,
               "url": null,
               "guide_chars": null,
@@ -241,7 +241,7 @@
       "words": [
         {
           "type": "blank",
-          "box_color": "black",
+          "style": "black",
           "limit_count": null,
           "url": null,
           "guide_chars": null,
@@ -251,7 +251,7 @@
         },
         {
           "type": "solid_boxed",
-          "box_color": "black",
+          "style": "black",
           "limit_count": null,
           "url": null,
           "guide_chars": null,
@@ -285,7 +285,7 @@
       "words": [
         {
           "type": "blank",
-          "box_color": "black",
+          "style": "black",
           "limit_count": null,
           "url": null,
           "guide_chars": null,
@@ -295,7 +295,7 @@
         },
         {
           "type": "solid_boxed",
-          "box_color": "black",
+          "style": "black",
           "limit_count": null,
           "url": null,
           "guide_chars": null,

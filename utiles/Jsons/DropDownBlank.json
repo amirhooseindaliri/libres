@@ -11,9 +11,10 @@
   "body": {
     "question": {
       "question_type": "text",
-      "question": ["Choose the correct answer."],
+      "question": "Choose the correct answer.",
       "question_style": {
-        "color": "black"
+        "color": "black",
+        "spans": null
       },
       "class_question": ""
     },
@@ -34,7 +35,7 @@
           "words": [
             {
               "type": "dorp_down",
-              "box_color": "#d6d8d9",
+              "style": "#d6d8d9",
               "limit_count": null,
               "url": null,
               "guide_chars": null,
@@ -51,7 +52,7 @@
           "words": [
             {
               "type": "dorp_down",
-              "box_color": "#d6d8d9",
+              "style": "#d6d8d9",
               "limit_count": null,
               "url": null,
               "guide_chars": null,
@@ -62,7 +63,7 @@
             },
             {
               "type": "dorp_down",
-              "box_color": "#d6d8d9",
+              "style": "#d6d8d9",
               "limit_count": null,
               "url": null,
               "guide_chars": null,
@@ -79,7 +80,7 @@
           "words": [
             {
               "type": "dorp_down",
-              "box_color": "#d6d8d9",
+              "style": "#d6d8d9",
               "limit_count": null,
               "url": null,
               "guide_chars": null,
@@ -90,7 +91,7 @@
             },
             {
               "type": "dorp_down",
-              "box_color": "#d6d8d9",
+              "style": "#d6d8d9",
               "limit_count": null,
               "url": null,
               "guide_chars": null,
@@ -107,7 +108,7 @@
           "words": [
             {
               "type": "dorp_down",
-              "box_color": "#d6d8d9",
+              "style": "#d6d8d9",
               "limit_count": null,
               "url": null,
               "guide_chars": null,
@@ -118,7 +119,7 @@
             },
             {
               "type": "dorp_down",
-              "box_color": "#d6d8d9",
+              "style": "#d6d8d9",
               "limit_count": null,
               "url": null,
               "guide_chars": null,

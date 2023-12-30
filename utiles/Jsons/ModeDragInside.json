@@ -4,14 +4,14 @@
   "exercize_tag_id": 1,
   "exercize_number": 1,
   "exercize_name": "Exercize 1",
-  "mode": "drag_box",
+  "mode": "drag_inside",
   "checkAnswer": false,
   "seeAnswer": false,
   "score": 0,
   "body": {
     "question": {
       "question_type": "text",
-      "question": "Complete the sentences with the words in the box.",
+      "question": "Put the words in the correct order to make sentences.",
       "question_style": {
         "color": "black",
         "spans": null
@@ -20,35 +20,34 @@
     },
     "box_style": {},
     "box_class": "col-md-12",
-    "words_box": {
-      "words_box_type": "text",
-      "words_box": ["Elena", "Spain", "Amy", "cat", "friends", "Tom", "red"],
-      "words_box_style": {},
-      "words_box_class": "col-md-12",
-      "words_box_delimiter": "|",
-      "words_box_draggable": true
+    "words_box": null,
+    "hint": {
+      "hint_type": "image",
+      "hint": [
+        "https://ftp.lib-res.info/BigBangFiles/PracticeCkEditorImage/29/f231500f7888496b95bdd5f2805ba7f6.JPG"
+      ],
+      "hint_style": {},
+      "hint_class": "",
+      "outOfBox": true
     },
-    "hint": null,
     "query": {
-      "query_type": "box_drag",
-      "query_style": {
-        "color": "black"
-      },
+      "query_type": "drag_inside",
+      "query_style": null,
       "query_class": "",
       "queries": [
         {
           "query_id": 1,
-          "sentence": "Box 1",
+          "sentence": "I to buy want it",
           "words": [
             {
-              "type": "solid_boxed",
-              "style": "#d6d8d9",
+              "type": "drag_inside",
+              "style": null,
               "limit_count": null,
               "url": null,
               "guide_chars": null,
               "options": null,
-              "correct": ["Elena", "Spain"],
-              "chosen": [],
+              "correct": ["I", "want", "to", "buy", "it"],
+              "chosen": ["I", "want", "to", "buy", "it"],
               "index": null
             }
           ]
@@ -58,31 +57,31 @@
           "sentence": "Box 2",
           "words": [
             {
-              "type": "solid_boxed",
-              "style": "#d6d8d9",
+              "type": "drag_inside",
+              "style": null,
               "limit_count": null,
               "url": null,
               "guide_chars": null,
               "options": null,
-              "correct": ["Amy", "cat"],
-              "chosen": [],
+              "correct": ["I", "want", "to", "buy", "it"],
+              "chosen": ["I", "want", "to", "buy", "it"],
               "index": null
             }
           ]
         },
         {
           "query_id": 3,
-          "sentence": "Box 3",
+          "sentence": "",
           "words": [
             {
-              "type": "solid_boxed",
-              "style": "#d6d8d9",
+              "type": "drag_inside",
+              "style": null,
               "limit_count": null,
               "url": null,
               "guide_chars": null,
               "options": null,
-              "correct": ["friends", "Tom", "red"],
-              "chosen": [],
+              "correct": ["I", "want", "to", "buy", "it"],
+              "chosen": ["I", "want", "to", "buy", "it"],
               "index": null
             }
           ]

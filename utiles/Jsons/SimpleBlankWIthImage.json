@@ -1,0 +1,105 @@
+{
+  "book_id": 1,
+  "exercise_section_id": 1,
+  "exercize_tag_id": 1,
+  "exercize_number": 1,
+  "exercize_name": "Exercize 1",
+  "mode": "simple_blank",
+  "checkAnswer": false,
+  "seeAnswer": false,
+  "score": 0,
+  "body": {
+    "question": {
+      "question_type": "text",
+      "question": "What are their names? Label the pictures.",
+      "question_style": {
+        "color": "black",
+        "spans": null
+      },
+      "class_question": ""
+    },
+    "readMore": {
+      "text": [
+        "In this activity you will be graded on capitalization lowercase  and UPPERCASE",
+        "Example: i think james isn't fun. I think James isn't fun."
+      ]
+    },
+    "box_style": {},
+    "box_class": "col-md-12",
+    "words_box": null,
+    "hint": {
+      "hint_type": "image",
+      "hint": [
+        "https://ftp.lib-res.info/BigBangFiles/PracticeCkEditorImage/29/aecba377663e48e98056610c266e7be3.JPG"
+      ],
+      "hint_style": {},
+      "hint_class": "",
+      "outOfBox": false
+    },
+    "query": {
+      "query_type": "simple_blank",
+      "query_style": {
+        "color": "black"
+      },
+      "query_class": "",
+      "queries": [
+        {
+          "query_id": 1,
+          "sentence": "1- % ~ %",
+          "words": [
+            {
+              "type": "image",
+              "style": null,
+              "limit_count": null,
+              "url": "https://ftp.lib-res.info/BigBangFiles/PracticeCkEditorImage/29/656bdc7f3fd94aefbb01774abc3f5603.jpg",
+              "guide_chars": null,
+              "options": null,
+              "correct": null,
+              "chosen": null,
+              "index": 3
+            },
+            {
+              "type": "simple_blank",
+              "style": null,
+              "limit_count": null,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "Elena",
+              "chosen": null,
+              "index": 7
+            }
+          ]
+        },
+        {
+          "query_id": 2,
+          "sentence": "1- % ~ %",
+          "words": [
+            {
+              "type": "image",
+              "style": null,
+              "limit_count": null,
+              "url": "https://ftp.lib-res.info/BigBangFiles/PracticeCkEditorImage/29/656bdc7f3fd94aefbb01774abc3f5603.jpg",
+              "guide_chars": null,
+              "options": null,
+              "correct": null,
+              "chosen": null,
+              "index": 3
+            },
+            {
+              "type": "simple_blank",
+              "style": null,
+              "limit_count": null,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "Elena",
+              "chosen": null,
+              "index": 7
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
