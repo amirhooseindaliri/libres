@@ -113,6 +113,14 @@
                     :checkAnswer="ecercise.checkAnswer"
                     :seeAnswer="ecercise.seeAnswer"
                   />
+                  <CheckBoxPractice
+                    v-if="ecercise.body.query.query_type === 'checkBox_chose'"
+                    :data="ecercise.body.query"
+                    @selectSuccess="Success"
+                    :checkAnswer="ecercise.checkAnswer"
+                    :seeAnswer="ecercise.seeAnswer"
+                    :key="ecercise.seeAnswer"
+                  />
                 </div>
               </div>
               <div
@@ -175,6 +183,7 @@ import ModeSimpleBlank from "./../../utiles/Jsons/ModeSimpleBlank.json";
 import SimpleBlankWIthImage from "./../../utiles/Jsons/SimpleBlankWIthImage.json";
 import ModeDragInside from "./../../utiles/Jsons/ModeDragInside.json";
 import ModeRadioChose from "./../../utiles/Jsons/ModeRadioChose.json";
+import ModeCheckBox from "./../../utiles/Jsons/ModeCheckBox.json";
 
 export default {
   layout: "practiceLayout",
@@ -189,7 +198,7 @@ export default {
     };
   },
   mounted() {
-    this.ecercise = ModeRadioChose;
+    this.ecercise = ModeCheckBox;
   },
   methods: {
     menuItems() {
@@ -200,7 +209,6 @@ export default {
         (item) => item.query_id === data.query_id
       );
       this.ecercise.body.query.queries[findIndex].words = data.newWords;
-      console.log(this.ecercise.body.query.queries[findIndex].words);
       if (
         this.ecercise.body.words_box &&
         (this.ecercise.mode === "drag_blank" ||
@@ -216,7 +224,6 @@ export default {
     },
     SuccessDragInside(data) {
       this.ecercise.body.query.queries = data;
-      console.log(this.ecercise.body.query.queries);
     },
     calcChosenWordBox() {
       this.ecercise.body.query.queries.forEach((query) => [
@@ -260,6 +267,12 @@ export default {
             if (is_correct) {
               corrected++;
             }
+          } else if (word.type === "checkBox_chose") {
+            allQuestion = word.options.length;
+            const is_correct = word.chosen.filter((chose) => {
+              return word.correct.includes(chose);
+            });
+            corrected = is_correct.length;
           }
         });
       });

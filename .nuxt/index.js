@@ -16,6 +16,7 @@ import nuxt_plugin_plugin_0755a400 from 'nuxt_plugin_plugin_0755a400' // Source:
 import nuxt_plugin_plugin_f81d6418 from 'nuxt_plugin_plugin_f81d6418' // Source: .\\vuetify\\plugin.js (mode: 'all')
 import nuxt_plugin_vuesweetalert2_69d8980c from 'nuxt_plugin_vuesweetalert2_69d8980c' // Source: .\\vue-sweetalert2.js (mode: 'client')
 import nuxt_plugin_vuedraggable_11e72f9a from 'nuxt_plugin_vuedraggable_11e72f9a' // Source: ..\\plugins\\vuedraggable.js (mode: 'client')
+import nuxt_plugin_axios_5659d192 from 'nuxt_plugin_axios_5659d192' // Source: ..\\plugins\\axios.js (mode: 'client')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -195,6 +196,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (process.client && typeof nuxt_plugin_vuedraggable_11e72f9a === 'function') {
     await nuxt_plugin_vuedraggable_11e72f9a(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_axios_5659d192 === 'function') {
+    await nuxt_plugin_axios_5659d192(app.context, inject)
   }
 
   // Lock enablePreview in context

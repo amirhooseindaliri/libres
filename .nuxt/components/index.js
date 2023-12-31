@@ -1,4 +1,5 @@
 export { default as BoxModelPractice } from '../..\\components\\BoxModelPractice.vue'
+export { default as CheckBoxPractice } from '../..\\components\\CheckBoxPractice.vue'
 export { default as ContainerDrag } from '../..\\components\\ContainerDrag.vue'
 export { default as DatePicker } from '../..\\components\\DatePicker.vue'
 export { default as DragInsidePractice } from '../..\\components\\DragInsidePractice.vue'

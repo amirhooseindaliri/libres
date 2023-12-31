@@ -2,6 +2,9 @@
   "BoxModelPractice": {
     "description": "Auto imported from components/BoxModelPractice.vue"
   },
+  "CheckBoxPractice": {
+    "description": "Auto imported from components/CheckBoxPractice.vue"
+  },
   "ContainerDrag": {
     "description": "Auto imported from components/ContainerDrag.vue"
   },

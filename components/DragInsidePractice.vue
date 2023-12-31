@@ -30,9 +30,7 @@ export default {
   components: {
     draggable,
   },
-  mounted() {
-    console.log("aaaaaaaa", this.seeAnswer);
-  },
+  mounted() {},
   data() {
     return {
       queries: this.data.queries,
