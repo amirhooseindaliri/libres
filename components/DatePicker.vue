@@ -16,7 +16,6 @@
               rtl
               v-model="dateFormatted"
               outlined
-              label="Date"
               persistent-hint
               prepend-icon="mdi-calendar"
               v-bind="attrs"

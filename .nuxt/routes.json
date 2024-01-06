@@ -9,74 +9,87 @@
         "name": "Book-Practice",
         "path": "Practice",
         "component": "P:\\\\amir-hossein-dalir\\\\libres\\\\pages\\\\Book\\\\Practice\\\\index.vue",
-        "chunkName": "pages/Book/Practice/index"
+        "chunkName": "pages/Book/Practice/index",
+        "_name": "_add5bdda"
       },
       {
-        "name": "Book-StudentsBook",
-        "path": "StudentsBook",
-        "component": "P:\\\\amir-hossein-dalir\\\\libres\\\\pages\\\\Book\\\\StudentsBook.vue",
-        "chunkName": "pages/Book/StudentsBook"
+        "name": "Book-practices",
+        "path": "practices",
+        "component": "P:\\\\amir-hossein-dalir\\\\libres\\\\pages\\\\Book\\\\practices.vue",
+        "chunkName": "pages/Book/practices",
+        "_name": "_747782d8"
       },
       {
-        "name": "Book-videos",
-        "path": "videos",
-        "component": "P:\\\\amir-hossein-dalir\\\\libres\\\\pages\\\\Book\\\\videos.vue",
-        "chunkName": "pages/Book/videos"
+        "name": "Book-resources",
+        "path": "resources",
+        "component": "P:\\\\amir-hossein-dalir\\\\libres\\\\pages\\\\Book\\\\resources.vue",
+        "chunkName": "pages/Book/resources",
+        "_name": "_6579c7a1"
       },
       {
         "name": "Book-Workbook",
         "path": "Workbook",
         "component": "P:\\\\amir-hossein-dalir\\\\libres\\\\pages\\\\Book\\\\Workbook.vue",
-        "chunkName": "pages/Book/Workbook"
+        "chunkName": "pages/Book/Workbook",
+        "_name": "_9e1dc564"
       }
-    ]
+    ],
+    "_name": "_2f588c34"
   },
   {
     "name": "Profile",
     "path": "/Profile",
     "component": "P:\\\\amir-hossein-dalir\\\\libres\\\\pages\\\\Profile\\\\index.vue",
-    "chunkName": "pages/Profile/index"
+    "chunkName": "pages/Profile/index",
+    "_name": "_7b6dbdd8"
   },
   {
     "name": "Requests",
     "path": "/Requests",
     "component": "P:\\\\amir-hossein-dalir\\\\libres\\\\pages\\\\Requests\\\\index.vue",
-    "chunkName": "pages/Requests/index"
+    "chunkName": "pages/Requests/index",
+    "_name": "_3f7088da"
   },
   {
     "name": "StartPractice",
     "path": "/StartPractice",
     "component": "P:\\\\amir-hossein-dalir\\\\libres\\\\pages\\\\StartPractice\\\\index.vue",
-    "chunkName": "pages/StartPractice/index"
+    "chunkName": "pages/StartPractice/index",
+    "_name": "_2abc0c40"
   },
   {
     "name": "test",
     "path": "/test",
     "component": "P:\\\\amir-hossein-dalir\\\\libres\\\\pages\\\\test\\\\index.vue",
-    "chunkName": "pages/test/index"
+    "chunkName": "pages/test/index",
+    "_name": "_57bd30a5"
   },
   {
     "name": "auth-forgotPassword",
     "path": "/auth/forgotPassword",
     "component": "P:\\\\amir-hossein-dalir\\\\libres\\\\pages\\\\auth\\\\forgotPassword.vue",
-    "chunkName": "pages/auth/forgotPassword"
+    "chunkName": "pages/auth/forgotPassword",
+    "_name": "_acd18e9e"
   },
   {
     "name": "auth-signin",
     "path": "/auth/signin",
     "component": "P:\\\\amir-hossein-dalir\\\\libres\\\\pages\\\\auth\\\\signin.vue",
-    "chunkName": "pages/auth/signin"
+    "chunkName": "pages/auth/signin",
+    "_name": "_52d43b16"
   },
   {
     "name": "auth-signup",
     "path": "/auth/signup",
     "component": "P:\\\\amir-hossein-dalir\\\\libres\\\\pages\\\\auth\\\\signup.vue",
-    "chunkName": "pages/auth/signup"
+    "chunkName": "pages/auth/signup",
+    "_name": "_29a78e2a"
   },
   {
     "name": "index",
     "path": "/",
     "component": "P:\\\\amir-hossein-dalir\\\\libres\\\\pages\\\\index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_c3d5a492"
   }
 ]

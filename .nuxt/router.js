@@ -6,8 +6,8 @@ import scrollBehavior from './router.scrollBehavior.js'
 
 const _2f588c34 = () => interopDefault(import('..\\pages\\Book.vue' /* webpackChunkName: "pages/Book" */))
 const _add5bdda = () => interopDefault(import('..\\pages\\Book\\Practice\\index.vue' /* webpackChunkName: "pages/Book/Practice/index" */))
-const _53a88af5 = () => interopDefault(import('..\\pages\\Book\\StudentsBook.vue' /* webpackChunkName: "pages/Book/StudentsBook" */))
-const _bec029e8 = () => interopDefault(import('..\\pages\\Book\\videos.vue' /* webpackChunkName: "pages/Book/videos" */))
+const _747782d8 = () => interopDefault(import('..\\pages\\Book\\practices.vue' /* webpackChunkName: "pages/Book/practices" */))
+const _6579c7a1 = () => interopDefault(import('..\\pages\\Book\\resources.vue' /* webpackChunkName: "pages/Book/resources" */))
 const _9e1dc564 = () => interopDefault(import('..\\pages\\Book\\Workbook.vue' /* webpackChunkName: "pages/Book/Workbook" */))
 const _7b6dbdd8 = () => interopDefault(import('..\\pages\\Profile\\index.vue' /* webpackChunkName: "pages/Profile/index" */))
 const _3f7088da = () => interopDefault(import('..\\pages\\Requests\\index.vue' /* webpackChunkName: "pages/Requests/index" */))
@@ -38,13 +38,13 @@ export const routerOptions = {
       component: _add5bdda,
       name: "Book-Practice"
     }, {
-      path: "StudentsBook",
-      component: _53a88af5,
-      name: "Book-StudentsBook"
+      path: "practices",
+      component: _747782d8,
+      name: "Book-practices"
     }, {
-      path: "videos",
-      component: _bec029e8,
-      name: "Book-videos"
+      path: "resources",
+      component: _6579c7a1,
+      name: "Book-resources"
     }, {
       path: "Workbook",
       component: _9e1dc564,

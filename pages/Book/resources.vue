@@ -1,13 +1,13 @@
 <template>
   <v-expansion-panels>
-    <v-expansion-panel v-for="(item, i) in 5" :key="i">
+    <v-expansion-panel v-for="(item, i) in sections" :key="i">
       <v-expansion-panel-header
         expand-icon="$BottomArrow"
         class="primary--text"
       >
         <span class="d-flex justify-content-start align-items-center">
           <i class="material-icons me-4" style="color: #e73883">toc</i>
-          Item
+          {{ item.name }}
         </span>
       </v-expansion-panel-header>
       <v-divider></v-divider>
@@ -41,3 +41,40 @@
     </v-expansion-panel>
   </v-expansion-panels>
 </template>
+<script>
+import { httpRequest } from "./../../plugins/axios";
+export default {
+  name: "IndexPage",
+  data() {
+    return {
+      sections: [],
+    };
+  },
+  mounted() {},
+
+  destroyed() {},
+  methods: {
+    async getSections() {
+      const token = localStorage.getItem("token");
+      httpRequest
+        .get(
+          `/books/book-part-section/book-sections/${this.$route.query.bookid}/${this.$route.query.part}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        )
+        .then((res) => {
+          const data = JSON.parse(JSON.stringify(res.data));
+          this.sections = data;
+        });
+    },
+  },
+  watch: {
+    $route(to, from) {
+      this.getSections();
+    },
+  },
+};
+</script>

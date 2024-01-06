@@ -139,6 +139,7 @@
                           label="Confirm Password"
                           outlined
                           v-model="bodyRequest.password1"
+                          type="password"
                           :rules="[rules.required, rules.password]"
                         ></v-text-field>
                         <v-text-field
@@ -147,7 +148,14 @@
                           label="Password"
                           outlined
                           v-model="bodyRequest.password"
-                          :rules="[rules.required]"
+                          type="password"
+                          :rules="[
+                            rules.required,
+                            rules.safePassword,
+                            rules.safePassword2,
+                            rules.safePassword3,
+                            rules.safePassword4,
+                          ]"
                         ></v-text-field>
                       </div>
                     </div>
@@ -200,7 +208,7 @@ export default {
           last_name: "",
           phone_number: "",
           birthday: "",
-          gender: "",
+          gender: "male",
         },
       },
       rules: {
@@ -208,6 +216,28 @@ export default {
         password: (value) =>
           value === this.bodyRequest.password ||
           "It does not match the original password",
+        safePassword: (value) => {
+          const pattern = /(?=.*[A-Z].*[A-Z])/;
+          return (
+            pattern.test(value) || "Ensure string has two uppercase letters"
+          );
+        },
+        safePassword2: (value) => {
+          const pattern = /(?=.*[!@#$&*])/;
+          return (
+            pattern.test(value) || "Ensure string has one special case letter."
+          );
+        },
+        safePassword3: (value) => {
+          const pattern = /(?=.*[0-9].*[0-9])/;
+          return pattern.test(value) || "Ensure string has two digits.";
+        },
+        safePassword4: (value) => {
+          const pattern = /(?=.*[a-z].*[a-z].*[a-z])/;
+          return (
+            pattern.test(value) || "Ensure string has three lowercase letters."
+          );
+        },
         email: (value) => {
           const pattern =
             /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -223,12 +253,29 @@ export default {
     async accountRegister(e) {
       e.preventDefault();
       if (this.$refs.form.validate()) {
-        const { data } = await httpRequest.post(
-          "/accounts/register",
-          this.bodyRequest
-        );
+        httpRequest
+          .post("/accounts/register/", this.bodyRequest)
+          .then(() => {
+            this.$router.replace({ path: "/auth/signin" });
+            this.$swal({
+              icon: "success",
+              title: "Your registration was successful",
+            });
+          })
+          .catch(() => {
+            this.$swal({
+              icon: "error",
+              title: "Try Again",
+            });
+          });
       }
     },
+  },
+  mounted() {
+    const token = localStorage.getItem("token");
+    if (token) {
+      this.$router.push("/");
+    }
   },
 };
 </script>

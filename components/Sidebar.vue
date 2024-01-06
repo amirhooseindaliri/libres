@@ -55,29 +55,28 @@
           <li
             id="practicesection"
             class="precticePart"
-            :class="{ MenuActive: $route.name.search('Practice') >= 0 }"
+            :class="{ MenuActive: $route.name.search('practices') >= 0 }"
+            v-if="showPracticeAndResource"
           >
             <NuxtLink
               class="Menuitenms"
-              :to="`/book/Practice?bookid=${$route.query.bookid}`"
+              :to="`/Book/practices?bookid=${$route.query.bookid}`"
             >
               <i class="material-icons" style="font-size: 37px">check_circle</i>
               <span style="font-size: 14px"> Practices</span>
             </NuxtLink>
           </li>
           <li
+            v-if="showPracticeAndResource"
             id="resoucesection"
             class="precticePart"
             :class="{
-              MenuActive:
-                $route.name.search('videos') >= 0 ||
-                $route.name.search('StudentsBook') >= 0 ||
-                $route.name.search('Workbook') >= 0,
+              MenuActive: $route.name.search('resources') >= 0,
             }"
           >
             <NuxtLink
               class="Menuitenms"
-              :to="`/book/videos?bookid=${$route.query.bookid}`"
+              :to="`/Book/resources?bookid=${$route.query.bookid}`"
             >
               <i class="material-icons" style="font-size: 45px">get_app</i>
               <span style="font-size: 14px"> Resources</span>
@@ -107,7 +106,7 @@
             </NuxtLink>
           </li>
           <li>
-            <a class="Menuitenms" href="/Logout">
+            <a class="Menuitenms" @click="signOut">
               <i class="material-icons" style="font-size: 50px">exit_to_app</i>
               <span style="font-size: 14px">sign out</span>
             </a>
@@ -150,15 +149,36 @@
   </div>
 </template>
 <script>
+import { httpRequest } from "./../plugins/axios";
 export default {
   name: "IndexPage",
   data() {
-    return {};
+    return {
+      showPracticeAndResource: false,
+    };
   },
   mounted() {
     this.$vuetify.goTo(0);
+    console.log(this.$route.path.search("Book") > 0);
+  },
+  methods: {
+    signOut() {
+      httpRequest.post("accounts/token/logout/").then((res) => {
+        localStorage.clear();
+        this.$router.replace({ path: "/auth/signin" });
+        this.$swal({
+          icon: "success",
+          title: "logout was successful",
+        });
+      });
+    },
   },
 
   destroyed() {},
+  watch: {
+    $route(to, from) {
+      this.showPracticeAndResource = this.$route.path.search("Book") > 0;
+    },
+  },
 };
 </script>

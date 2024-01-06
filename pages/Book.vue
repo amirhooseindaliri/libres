@@ -36,9 +36,9 @@
                           :key="index"
                         >
                           <NuxtLink
-                            :class="{ active: $route.name === item.routeName }"
+                            :class="{ active: $route.query.part === item.name }"
                             class="nav-link xss Videos"
-                            :to="item.link"
+                            :to="`/Book/resources?bookid=${$route.query.bookid}&part=${item.name}`"
                             >{{ item.name }}
                           </NuxtLink>
                         </li>
@@ -76,50 +76,53 @@
   <Loading v-else />
 </template>
 <script>
-import { computed } from "vue";
+import { httpRequest } from "../plugins/axios";
 
 export default {
   data() {
     return {
-      itemsBook: [
-        {
-          name: "Videos",
-          link: `/Book/videos?bookid=${this.$route.query.bookid}`,
-          routeName: "Book-videos",
-        },
-        {
-          name: "Student's Book",
-          link: `/Book/StudentsBook?bookid=${this.$route.query.bookid}`,
-          routeName: "Book-StudentsBook",
-        },
-        {
-          name: "Workbook",
-          link: `/Book/Workbook?bookid=${this.$route.query.bookid}`,
-          routeName: "Book-Workbook",
-        },
-      ],
-      itemsPractice: [
-        {
-          name: "Unit 0 Get Started",
-          link: `/Book/Practice?bookid=${this.$route.query.bookid}&sectionId=1`,
-          routeName: "Book-practice",
-        },
-      ],
+      itemsBook: [],
+      itemsPractice: [],
       isOpenNav: true,
     };
   },
   computed: {
     menuItem() {
-      if (this.$route.name.search("Practice") >= 0) {
-        return this.itemsPractice;
-      } else {
+      if (this.$route.name.search("resources") >= 0) {
+        console.log(this.itemsBook, "item books");
         return this.itemsBook;
+      } else {
+        return this.itemsPractice;
       }
     },
+  },
+  mounted() {
+    this.getParts();
   },
   methods: {
     openNav() {
       this.isOpenNav = !this.isOpenNav;
+    },
+    async getParts() {
+      const token = localStorage.getItem("token");
+      httpRequest
+        .get(
+          `/books/book-part-section/book-parts/${this.$route.query.bookid}/`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        )
+        .then((res) => {
+          const data = JSON.parse(JSON.stringify(res.data));
+          this.itemsBook = data.resources;
+          this.$router.push(
+            `/Book/resources?bookid=${this.$route.query.bookid}&part=${this.itemsBook[0].name}`
+          );
+          this.itemsPractice = data.practices;
+          console.log(this.itemsPractice);
+        });
     },
   },
 };

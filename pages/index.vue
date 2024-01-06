@@ -19,6 +19,7 @@
             }"
           >
             <div
+              v-for="book in books"
               class="col-lg-3 col-md-4 col-sm-6 col-12"
               style="margin-top: 25px"
             >
@@ -38,11 +39,13 @@
                     />
                   </div>
                   <div class="col row">
-                    <span class="col-md-12" style="color: white">G.G 2</span>
+                    <span class="col-md-12" style="color: white">{{
+                      book.name
+                    }}</span>
                     <span
                       class="col-md-12"
                       :style="{ color: 'white', cursor: 'pointer' }"
-                      @click="$router.push('/Book/videos?bookid=1')"
+                      @click="$router.push(`/Book/resources?bookid=${book.id}`)"
                       >Go to resource and practice
                       <i class="material-icons" style="vertical-align: bottom"
                         >link</i
@@ -79,6 +82,7 @@
             <div
               class="col-lg-3 col-md-4 col-sm-6 col-12"
               style="margin-top: 25px; text-align: center"
+              @click="dialog = true"
             >
               <div
                 :style="{
@@ -113,7 +117,7 @@
                   height: '100%',
                   cursor: 'pointer',
                 }"
-                onclick="Guidemodal()"
+                @click="dialogGuid = true"
               >
                 <div>
                   <i
@@ -197,14 +201,8 @@
         </div>
       </div>
     </div>
-    <div
-      class="modal fade"
-      id="Guidemodal"
-      role="dialog"
-      aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+    <div class="modal">
+      <v-dialog v-model="dialogGuid" width="auto" origin="center top">
         <div class="modal-content">
           <div class="modal-header">
             <button
@@ -212,6 +210,7 @@
               class="close"
               data-dismiss="modal"
               aria-label="Close"
+              @click="dialogGuid = false"
             >
               <span aria-hidden="true">×</span>
             </button>
@@ -219,97 +218,20 @@
           </div>
           <div class="modal-body">
             <div style="text-align: center">
-              <a style="height: 100%; cursor: pointer" href="/common/guide.png">
-                <div>
-                  <img
-                    src="/common/guide.png"
-                    class="mt-4"
-                    style="height: 100%; width: 100%"
-                  />
-                </div>
-              </a>
+              <div>
+                <img
+                  src="./../assets/images/guide.png"
+                  class="mt-4"
+                  style="height: 100%; width: 100%"
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </v-dialog>
     </div>
-    <div
-      class="modal fade"
-      id="addclassmodal"
-      role="dialog"
-      aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-md modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <form id="addForm2" method="post">
-            <div class="modal-header">
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">×</span>
-              </button>
-              <h5 class="modal-title" id="exampleModalLongTitle">
-                Create class
-              </h5>
-            </div>
-            <div class="modal-body">
-              <div class="row" style="direction: ltr">
-                <label class="col-md-12 col-12">Please Enter class name </label>
-                <div class="col-md-10 col-10">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="ClName"
-                    name="ClName"
-                  />
-                  <input
-                    type="text"
-                    class="form-control accessId"
-                    style="display: none"
-                    data-val="true"
-                    data-val-required="The accesscodeId field is required."
-                    id="accesscodeId"
-                    name="accesscodeId"
-                  />
-                </div>
-                <div class="col-md-2 col-2">
-                  <i
-                    class="material-icons"
-                    style="color: green; font-weight: 900; cursor: pointer"
-                    id="checkbtn2"
-                    onclick="CreateClass()"
-                    >check</i
-                  >
-                  <div id="loader2" class="loader" style="display: none"></div>
-                </div>
-                <span
-                  class="text-danger field-validation-valid"
-                  data-valmsg-for="ClName"
-                  data-valmsg-replace="true"
-                ></span>
-              </div>
-            </div>
-            <input
-              name="__RequestVerificationToken"
-              type="hidden"
-              value="CfDJ8PxkWscGxitIhJp3Lnswwjv9AkBx63eJKT9z-UD3o5cnStAEcyyjcPhArMq3K9I79bEtZig2-20rHWIPyEV6bwGqHhOR-Tcm7bTaw-wh8fXcRWRhGR1zBb031Q5gT3VMOELfjfGQ2WzL8NwNhX7Km_I9MFald6iTTARCNF9XWM4jGO5b7LY0VmLoiUfRb6YjUw"
-            />
-          </form>
-        </div>
-      </div>
-    </div>
-    <div
-      class="modal fade"
-      id="joinclassmodal"
-      role="dialog"
-      aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+    <div class="modal">
+      <v-dialog v-model="dialog" width="auto" origin="center top">
         <div class="modal-content">
           <form id="addForm3" method="post">
             <div class="modal-header">
@@ -318,6 +240,7 @@
                 class="close"
                 data-dismiss="modal"
                 aria-label="Close"
+                @click="dialog = false"
               >
                 <span aria-hidden="true">×</span>
               </button>
@@ -334,32 +257,16 @@
                     data-val="true"
                     data-val-required="The ClassCode field is required."
                     name="ClassCode"
-                  />
-                  <input
-                    type="text"
-                    id="AccessCodeBookId"
-                    class="form-control accessId"
-                    style="display: none"
-                    data-val="true"
-                    data-val-required="The AccessCodeBookId field is required."
-                    name="AccessCodeBookId"
-                  />
-                  <input
-                    type="text"
-                    id="accesscodeIdnew"
-                    class="form-control accessId"
-                    style="display: none"
-                    data-val="true"
-                    data-val-required="The accesscodeId field is required."
-                    name="accesscodeId"
+                    v-model="tokenApplay"
                   />
                 </div>
                 <div class="col-md-2 col-2">
                   <i
+                    v-if="tokenApplay.length > 2"
                     class="material-icons"
                     style="color: green; font-weight: 900; cursor: pointer"
                     id="checkbtn3"
-                    onclick="JoinClass()"
+                    @click="applyToken()"
                     >check</i
                   >
                   <div id="loader3" class="loader" style="display: none"></div>
@@ -378,21 +285,77 @@
             />
           </form>
         </div>
-      </div>
+      </v-dialog>
     </div>
   </div>
 </template>
 
 <script>
+import { httpRequest } from "./../plugins/axios";
 export default {
   name: "IndexPage",
   data() {
-    return {};
+    return {
+      dialog: false,
+      dialogGuid: false,
+      books: [],
+      tokenApplay: "",
+    };
   },
   mounted() {
     this.$vuetify.goTo(0);
+    this.getProfile();
+    this.getBooks();
   },
 
   destroyed() {},
+  methods: {
+    async getProfile() {
+      const token = localStorage.getItem("token");
+      httpRequest
+        .get("/accounts/profile/", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((res) => {})
+        .catch((e) => {
+          localStorage.clear();
+          this.$router.push("/auth/signin");
+        });
+    },
+    async getBooks() {
+      const token = localStorage.getItem("token");
+      httpRequest
+        .get("/books/?page=1", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((res) => {
+          this.books = res.data.results;
+        })
+        .catch((e) => {});
+    },
+    async applyToken() {
+      const token = localStorage.getItem("token");
+      httpRequest
+        .post(
+          "/books/token/add/apply/",
+          {
+            token: this.tokenApplay,
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        )
+        .then((res) => {
+          this.dialog = false;
+          this.getBooks();
+        });
+    },
+  },
 };
 </script>
