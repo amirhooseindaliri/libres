@@ -15,7 +15,7 @@ httpRequest.interceptors.response.use(
       toast: true,
       icon: "error",
       position: "top-end",
-      title: error.response.data.detail,
+      title: error.response.data.details.join(" "),
       showConfirmButton: false,
       timer: 1500,
       customClass: {

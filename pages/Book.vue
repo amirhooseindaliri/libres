@@ -35,12 +35,17 @@
                           style="width: 100%"
                           :key="index"
                         >
-                          <NuxtLink
-                            :class="{ active: $route.query.part === item.name }"
+                          <a
+                            :class="{
+                              active:
+                                Number($route.query.part) === Number(item.id),
+                            }"
                             class="nav-link xss Videos"
-                            :to="`/Book/resources?bookid=${$route.query.bookid}&part=${item.name}`"
+                            @click="
+                              generateLink($event, $route.query.bookid, item.id)
+                            "
                             >{{ item.name }}
-                          </NuxtLink>
+                          </a>
                         </li>
                       </ul>
                     </div>
@@ -84,6 +89,7 @@ export default {
       itemsBook: [],
       itemsPractice: [],
       isOpenNav: true,
+      clickResources: false,
     };
   },
   computed: {
@@ -118,11 +124,20 @@ export default {
           const data = JSON.parse(JSON.stringify(res.data));
           this.itemsBook = data.resources;
           this.$router.push(
-            `/Book/resources?bookid=${this.$route.query.bookid}&part=${this.itemsBook[0].name}`
+            `/Book/resources?bookid=${this.$route.query.bookid}&part=${this.itemsBook[0].id}`
           );
           this.itemsPractice = data.practices;
           console.log(this.itemsPractice);
         });
+    },
+    generateLink(event, bookid, partId) {
+      event.preventDefault();
+      console.log(bookid, partId);
+      this.$router.push(
+        `/Book/${
+          this.$route.path.search("resources") > 0 ? "resources" : "practices"
+        }?bookid=${bookid}&part=${partId}`
+      );
     },
   },
 };

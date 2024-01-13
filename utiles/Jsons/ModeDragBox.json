@@ -9,6 +9,9 @@
   "seeAnswer": false,
   "score": 0,
   "body": {
+    "mode": "drag_box",
+    "checkAnswer": false,
+    "seeAnswer": false,
     "question": {
       "question_type": "text",
       "question": "Complete the sentences with the words in the box.",

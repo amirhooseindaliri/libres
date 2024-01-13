@@ -9,6 +9,9 @@
   "seeAnswer": false,
   "score": 0,
   "body": {
+    "mode": "checkBox_chose",
+    "checkAnswer": false,
+    "seeAnswer": false,
     "question": {
       "question_type": "text",
       "question": "Find eight school subjects. To choose a word, click on the first and last letter.",

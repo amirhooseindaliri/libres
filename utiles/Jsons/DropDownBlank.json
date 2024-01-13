@@ -9,6 +9,9 @@
   "seeAnswer": false,
   "score": 0,
   "body": {
+    "checkAnswer": false,
+    "seeAnswer": false,
+    "mode": "drop_down_blank",
     "question": {
       "question_type": "text",
       "question": "Choose the correct answer.",

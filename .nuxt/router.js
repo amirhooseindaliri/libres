@@ -8,7 +8,6 @@ const _2f588c34 = () => interopDefault(import('..\\pages\\Book.vue' /* webpackCh
 const _add5bdda = () => interopDefault(import('..\\pages\\Book\\Practice\\index.vue' /* webpackChunkName: "pages/Book/Practice/index" */))
 const _747782d8 = () => interopDefault(import('..\\pages\\Book\\practices.vue' /* webpackChunkName: "pages/Book/practices" */))
 const _6579c7a1 = () => interopDefault(import('..\\pages\\Book\\resources.vue' /* webpackChunkName: "pages/Book/resources" */))
-const _9e1dc564 = () => interopDefault(import('..\\pages\\Book\\Workbook.vue' /* webpackChunkName: "pages/Book/Workbook" */))
 const _7b6dbdd8 = () => interopDefault(import('..\\pages\\Profile\\index.vue' /* webpackChunkName: "pages/Profile/index" */))
 const _3f7088da = () => interopDefault(import('..\\pages\\Requests\\index.vue' /* webpackChunkName: "pages/Requests/index" */))
 const _2abc0c40 = () => interopDefault(import('..\\pages\\StartPractice\\index.vue' /* webpackChunkName: "pages/StartPractice/index" */))
@@ -45,10 +44,6 @@ export const routerOptions = {
       path: "resources",
       component: _6579c7a1,
       name: "Book-resources"
-    }, {
-      path: "Workbook",
-      component: _9e1dc564,
-      name: "Book-Workbook"
     }]
   }, {
     path: "/Profile",

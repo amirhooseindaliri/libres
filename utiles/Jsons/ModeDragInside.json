@@ -9,6 +9,9 @@
   "seeAnswer": false,
   "score": 0,
   "body": {
+    "mode": "drag_inside",
+    "checkAnswer": false,
+    "seeAnswer": false,
     "question": {
       "question_type": "text",
       "question": "Put the words in the correct order to make sentences.",

@@ -9,6 +9,9 @@
   "seeAnswer": false,
   "score": 0,
   "body": {
+    "mode": "radio_chose",
+    "checkAnswer": false,
+    "seeAnswer": false,
     "question": {
       "question_type": "text",
       "question": "Choose the correct answer.",

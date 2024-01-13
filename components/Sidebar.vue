@@ -106,7 +106,7 @@
             </NuxtLink>
           </li>
           <li>
-            <a class="Menuitenms" @click="signOut">
+            <a class="Menuitenms" @click="signOut($event)">
               <i class="material-icons" style="font-size: 50px">exit_to_app</i>
               <span style="font-size: 14px">sign out</span>
             </a>
@@ -162,14 +162,27 @@ export default {
     console.log(this.$route.path.search("Book") > 0);
   },
   methods: {
-    signOut() {
-      httpRequest.post("accounts/token/logout/").then((res) => {
-        localStorage.clear();
-        this.$router.replace({ path: "/auth/signin" });
-        this.$swal({
-          icon: "success",
-          title: "logout was successful",
-        });
+    signOut(e) {
+      e.preventDefault();
+      // const token = localStorage.getItem("token");
+      // httpRequest
+      //   .post(
+      //     "accounts/token/logout/",
+      //     {},
+      //     {
+      //       headers: {
+      //         Authorization: `Bearer ${token}`,
+      //       },
+      //     }
+      //   )
+      // .then((res) => {
+
+      // });
+      localStorage.clear();
+      this.$router.replace({ path: "/auth/signin" });
+      this.$swal({
+        icon: "success",
+        title: "logout was successful",
       });
     },
   },

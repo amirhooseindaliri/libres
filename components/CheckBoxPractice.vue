@@ -67,7 +67,7 @@ export default {
       });
     },
     selectedOption(option, correct) {
-      if (this.seeAnswer) {
+      if (this.seeAnswer || this.checkAnswer) {
         if (correct.includes(option)) {
           return true;
         } else {

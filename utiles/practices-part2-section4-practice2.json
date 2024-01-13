@@ -1,0 +1,371 @@
+{
+  "id": 1,
+  "uid": "unknow",
+  "is_active": true,
+  "is_archived": false,
+  "created_at": "unknow",
+  "updated_at": "unknow",
+  "name": "practice 2",
+  "default_content": {
+    "mode": "simple_blank",
+    "checkAnswer": false,
+    "seeAnswer": false,
+    "question": {
+      "question_type": "text",
+      "question": "1- a ball $ $ the wardrobe",
+      "question_style": {
+        "color": "black",
+        "spans": [
+          {
+            "type": "span",
+            "backgroundColor": "#4e5f70",
+            "color": "#ffffff",
+            "text": "o",
+            "index": 10
+          },
+          {
+            "type": "span",
+            "backgroundColor": "#4e5f70",
+            "color": "#dddddd",
+            "text": "n",
+            "index": 12
+          }
+        ]
+      },
+      "class_question": ""
+    },
+    "box_style": {},
+    "box_class": "col-md-12",
+    "words_box": null,
+    "hint": {},
+    "query": {
+      "query_type": "simple_blank",
+      "query_style": {
+        "color": "black"
+      },
+      "query_class": "",
+      "queries": [
+        {
+          "query_id": 1,
+          "sentence": "1 A: Have you  got  a sister? ~  B: No, I %",
+          "words": [
+            {
+              "type": "simple_blank",
+              "style": "#d6d8d9",
+              "limit_count": null,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "Elena",
+              "chosen": null,
+              "index": 42
+            }
+          ]
+        },
+        {
+          "query_id": 2,
+          "sentence": "1 What's % ? %  a hat.",
+          "words": [
+            {
+              "type": "span",
+              "style": {
+                "backgroundColor": "#4e5f70",
+                "color": "#ffffff"
+              },
+              "limit_count": null,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "this",
+              "chosen": null,
+              "index": 9
+            },
+            {
+              "type": "simple_blank",
+              "style": "#d6d8d9",
+              "limit_count": null,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "Amy",
+              "chosen": null,
+              "index": 13
+            }
+          ]
+        },
+        {
+          "query_id": 3,
+          "sentence": "3- Hi. I'm %  . My favourite colour is %",
+          "words": [
+            {
+              "type": "simple_blank",
+              "style": "#d6d8d9",
+              "limit_count": null,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "cat",
+              "chosen": null,
+              "index": 11
+            },
+            {
+              "type": "simple_blank",
+              "style": "#d6d8d9",
+              "limit_count": null,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "friends",
+              "chosen": null,
+              "index": 39
+            }
+          ]
+        },
+        {
+          "query_id": 4,
+          "sentence": "2- a skateboard %%%%%  the wardrobe",
+          "words": [
+            {
+              "type": "simple_blank",
+              "style": "#d6d8d9",
+              "limit_count": 1,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "Tom",
+              "chosen": null,
+              "index": 16
+            },
+            {
+              "type": "simple_blank",
+              "style": "#d6d8d9",
+              "limit_count": 1,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "Tom",
+              "chosen": null,
+              "index": 17
+            },
+            {
+              "type": "simple_blank",
+              "style": "#d6d8d9",
+              "limit_count": 1,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "Tom",
+              "chosen": null,
+              "index": 18
+            },
+            {
+              "type": "simple_blank",
+              "style": "#d6d8d9",
+              "limit_count": 1,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "Tom",
+              "chosen": null,
+              "index": 19
+            },
+            {
+              "type": "simple_blank",
+              "style": "#d6d8d9",
+              "limit_count": 1,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "Tom",
+              "chosen": null,
+              "index": 20
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "content": {
+    "mode": "simple_blank",
+    "checkAnswer": false,
+    "seeAnswer": false,
+    "question": {
+      "question_type": "text",
+      "question": "1- a ball $ $ the wardrobe",
+      "question_style": {
+        "color": "black",
+        "spans": [
+          {
+            "type": "span",
+            "backgroundColor": "#4e5f70",
+            "color": "#ffffff",
+            "text": "o",
+            "index": 10
+          },
+          {
+            "type": "span",
+            "backgroundColor": "#4e5f70",
+            "color": "#dddddd",
+            "text": "n",
+            "index": 12
+          }
+        ]
+      },
+      "class_question": ""
+    },
+    "box_style": {},
+    "box_class": "col-md-12",
+    "words_box": null,
+    "hint": {},
+    "query": {
+      "query_type": "simple_blank",
+      "query_style": {
+        "color": "black"
+      },
+      "query_class": "",
+      "queries": [
+        {
+          "query_id": 1,
+          "sentence": "1 A: Have you  got  a sister? ~  B: No, I %",
+          "words": [
+            {
+              "type": "simple_blank",
+              "style": "#d6d8d9",
+              "limit_count": null,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "Elena",
+              "chosen": null,
+              "index": 42
+            }
+          ]
+        },
+        {
+          "query_id": 2,
+          "sentence": "1 What's % ? %  a hat.",
+          "words": [
+            {
+              "type": "span",
+              "style": {
+                "backgroundColor": "#4e5f70",
+                "color": "#ffffff"
+              },
+              "limit_count": null,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "this",
+              "chosen": null,
+              "index": 9
+            },
+            {
+              "type": "simple_blank",
+              "style": "#d6d8d9",
+              "limit_count": null,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "Amy",
+              "chosen": null,
+              "index": 13
+            }
+          ]
+        },
+        {
+          "query_id": 3,
+          "sentence": "3- Hi. I'm %  . My favourite colour is %",
+          "words": [
+            {
+              "type": "simple_blank",
+              "style": "#d6d8d9",
+              "limit_count": null,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "cat",
+              "chosen": null,
+              "index": 11
+            },
+            {
+              "type": "simple_blank",
+              "style": "#d6d8d9",
+              "limit_count": null,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "friends",
+              "chosen": null,
+              "index": 39
+            }
+          ]
+        },
+        {
+          "query_id": 4,
+          "sentence": "2- a skateboard %%%%%  the wardrobe",
+          "words": [
+            {
+              "type": "simple_blank",
+              "style": "#d6d8d9",
+              "limit_count": 1,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "Tom",
+              "chosen": null,
+              "index": 16
+            },
+            {
+              "type": "simple_blank",
+              "style": "#d6d8d9",
+              "limit_count": 1,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "Tom",
+              "chosen": null,
+              "index": 17
+            },
+            {
+              "type": "simple_blank",
+              "style": "#d6d8d9",
+              "limit_count": 1,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "Tom",
+              "chosen": null,
+              "index": 18
+            },
+            {
+              "type": "simple_blank",
+              "style": "#d6d8d9",
+              "limit_count": 1,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "Tom",
+              "chosen": null,
+              "index": 19
+            },
+            {
+              "type": "simple_blank",
+              "style": "#d6d8d9",
+              "limit_count": 1,
+              "url": null,
+              "guide_chars": null,
+              "options": null,
+              "correct": "Tom",
+              "chosen": null,
+              "index": 20
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "item_order": 1,
+  "score": "00.00",
+  "book_section_entity": "unknow",
+  "tag": "unknow"
+}

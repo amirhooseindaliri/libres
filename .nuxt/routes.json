@@ -25,13 +25,6 @@
         "component": "P:\\\\amir-hossein-dalir\\\\libres\\\\pages\\\\Book\\\\resources.vue",
         "chunkName": "pages/Book/resources",
         "_name": "_6579c7a1"
-      },
-      {
-        "name": "Book-Workbook",
-        "path": "Workbook",
-        "component": "P:\\\\amir-hossein-dalir\\\\libres\\\\pages\\\\Book\\\\Workbook.vue",
-        "chunkName": "pages/Book/Workbook",
-        "_name": "_9e1dc564"
       }
     ],
     "_name": "_2f588c34"

@@ -32,18 +32,16 @@
             >
               <input type="hidden" value="1" id="PageIndex" />
               <SentencePractice
-                v-if="ecercise.body.question"
-                :question="ecercise.body.question"
+                v-if="ecercise.question"
+                :question="ecercise.question"
               />
               <ReadMorePractice
-                v-if="ecercise.body.readMore"
-                :readMore="ecercise.body.readMore"
+                v-if="ecercise.readMore"
+                :readMore="ecercise.readMore"
               />
               <HintPractice
-                v-if="
-                  ecercise.body.hint && ecercise.body.hint.outOfBox === true
-                "
-                :data="ecercise.body.hint"
+                v-if="ecercise.hint && ecercise.hint.outOfBox === true"
+                :data="ecercise.hint"
               />
               <div
                 :style="{
@@ -55,67 +53,68 @@
                   padding: '15px',
                   marginBottom: '10px',
                 }"
-                :class="ecercise.body.box_class"
+                :class="ecercise.box_class"
               >
-                <div id="questionDetail" style="pointer-events: all">
+                <div
+                  v-if="ecercise.query"
+                  id="questionDetail"
+                  style="pointer-events: all"
+                >
                   <WordBoxPractice
-                    v-if="ecercise.body.words_box"
-                    :data="ecercise.body.words_box"
+                    v-if="ecercise.words_box"
+                    :data="ecercise.words_box"
                     :checkAnswer="ecercise.checkAnswer"
                     :mode="ecercise.mode"
                   />
                   <HintPractice
-                    v-if="
-                      ecercise.body.hint &&
-                      ecercise.body.hint.outOfBox === false
-                    "
-                    :data="ecercise.body.hint"
+                    v-if="ecercise.hint && ecercise.hint.outOfBox === false"
+                    :data="ecercise.hint"
                   />
                   <SentenceBlank
-                    v-if="ecercise.body.query.query_type === 'drag_blank'"
-                    :data="ecercise.body.query"
+                    v-if="ecercise.query.query_type === 'drag_blank'"
+                    :data="ecercise.query"
                     @dropSuccess="Success"
                     :checkAnswer="ecercise.checkAnswer"
                   />
                   <DropDownBlank
-                    v-if="ecercise.body.query.query_type === 'drop_down_blank'"
-                    :data="ecercise.body.query"
+                    v-if="ecercise.query.query_type === 'drop_down_blank'"
+                    :data="ecercise.query"
                     @selectSuccess="Success"
                     :checkAnswer="ecercise.checkAnswer"
                     :seeAnswer="ecercise.seeAnswer"
                   />
                   <ContainerDrag
-                    v-if="ecercise.body.query.query_type === 'box_drag'"
-                    :data="ecercise.body.query"
+                    v-if="ecercise.query.query_type === 'box_drag'"
+                    :data="ecercise.query"
                     @dropSuccess="Success"
                     :checkAnswer="ecercise.checkAnswer"
                     :seeAnswer="ecercise.seeAnswer"
                   />
                   <SimpleBlank
-                    v-if="ecercise.body.query.query_type === 'simple_blank'"
-                    :data="ecercise.body.query"
+                    v-if="ecercise.query.query_type === 'simple_blank'"
+                    :data="ecercise.query"
                     @changeSuccess="Success"
                     :checkAnswer="ecercise.checkAnswer"
                     :seeAnswer="ecercise.seeAnswer"
                   />
                   <DragInsidePractice
-                    v-if="ecercise.body.query.query_type === 'drag_inside'"
-                    :data="ecercise.body.query"
+                    v-if="ecercise.query.query_type === 'drag_inside'"
+                    :data="ecercise.query"
                     @changeSuccess="SuccessDragInside"
                     :checkAnswer="ecercise.checkAnswer"
                     :seeAnswer="ecercise.seeAnswer"
                     :key="ecercise.seeAnswer"
                   />
                   <RadioPractice
-                    v-if="ecercise.body.query.query_type === 'radio_chose'"
-                    :data="ecercise.body.query"
+                    v-if="ecercise.query.query_type === 'radio_chose'"
+                    :data="ecercise.query"
                     @selectSuccess="Success"
                     :checkAnswer="ecercise.checkAnswer"
                     :seeAnswer="ecercise.seeAnswer"
                   />
                   <CheckBoxPractice
-                    v-if="ecercise.body.query.query_type === 'checkBox_chose'"
-                    :data="ecercise.body.query"
+                    v-if="ecercise.query.query_type === 'checkBox_chose'"
+                    :data="ecercise.query"
                     @selectSuccess="Success"
                     :checkAnswer="ecercise.checkAnswer"
                     :seeAnswer="ecercise.seeAnswer"
@@ -184,6 +183,7 @@ import SimpleBlankWIthImage from "./../../utiles/Jsons/SimpleBlankWIthImage.json
 import ModeDragInside from "./../../utiles/Jsons/ModeDragInside.json";
 import ModeRadioChose from "./../../utiles/Jsons/ModeRadioChose.json";
 import ModeCheckBox from "./../../utiles/Jsons/ModeCheckBox.json";
+import { httpRequest } from "../../plugins/axios";
 
 export default {
   layout: "practiceLayout",
@@ -195,9 +195,12 @@ export default {
         { id: 1, chlidren: [{ name: "Exercise 1" }, { name: "Exercise 2" }] },
       ],
       ecercise: null,
+      defaultExercise: null,
+      mainData: null,
     };
   },
   mounted() {
+    this.getPractice();
     this.ecercise = ModeCheckBox;
   },
   methods: {
@@ -205,35 +208,32 @@ export default {
       return this.menu;
     },
     Success(data) {
-      const findIndex = this.ecercise.body.query.queries.findIndex(
+      const findIndex = this.ecercise.query.queries.findIndex(
         (item) => item.query_id === data.query_id
       );
-      this.ecercise.body.query.queries[findIndex].words = data.newWords;
+      this.ecercise.query.queries[findIndex].words = data.newWords;
       if (
-        this.ecercise.body.words_box &&
+        this.ecercise.words_box &&
         (this.ecercise.mode === "drag_blank" ||
           this.ecercise.mode === "drop_down_blank")
       ) {
         this.calcChosenWordBox();
-      } else if (
-        this.ecercise.body.words_box &&
-        this.ecercise.mode === "drag_box"
-      ) {
+      } else if (this.ecercise.words_box && this.ecercise.mode === "drag_box") {
         this.calcChosenWordBoxDragBox();
       }
     },
     SuccessDragInside(data) {
-      this.ecercise.body.query.queries = data;
+      this.ecercise.query.queries = data;
     },
     calcChosenWordBox() {
-      this.ecercise.body.query.queries.forEach((query) => [
+      this.ecercise.query.queries.forEach((query) => [
         query.words.forEach((Qword) => {
-          const hasItem = this.ecercise.body.words_box.words_box.includes(
+          const hasItem = this.ecercise.words_box.words_box.includes(
             Qword.chosen
           );
           if (hasItem) {
-            this.ecercise.body.words_box.words_box =
-              this.ecercise.body.words_box.words_box.filter((item) => {
+            this.ecercise.words_box.words_box =
+              this.ecercise.words_box.words_box.filter((item) => {
                 return item !== Qword.chosen;
               });
           }
@@ -241,9 +241,9 @@ export default {
       ]);
     },
     calcChosenWordBoxDragBox() {
-      this.ecercise.body.query.queries.forEach((query) => [
-        (this.ecercise.body.words_box.words_box =
-          this.ecercise.body.words_box.words_box.filter((item) => {
+      this.ecercise.query.queries.forEach((query) => [
+        (this.ecercise.words_box.words_box =
+          this.ecercise.words_box.words_box.filter((item) => {
             return !query.words[0].chosen.includes(item);
           })),
       ]);
@@ -252,7 +252,7 @@ export default {
       this.ecercise.checkAnswer = true;
       let corrected = 0;
       let allQuestion = 0;
-      this.ecercise.body.query.queries.forEach((item) => {
+      this.ecercise.query.queries.forEach((item) => {
         item.words.forEach((word) => {
           if (
             word.type === "solid_boxed" ||
@@ -278,6 +278,7 @@ export default {
       });
       const score = Math.floor((corrected / allQuestion) * 100);
       this.ecercise.score = score;
+      this.updatePractice();
       if (score >= 50) {
         this.$swal({
           icon: "success",
@@ -292,19 +293,59 @@ export default {
         });
       }
     },
-    TryAgain() {},
+    TryAgain() {
+      const newEcercise = this.defaultExercise;
+      this.ecercise = newEcercise;
+      console.log(this.ecercise);
+    },
     SeeAnswer() {
       this.ecercise.seeAnswer = true;
-      this.ecercise.body.query.queries = this.ecercise.body.query.queries.map(
-        (query) => {
-          const fixAnswer = query.words.map((Qword) => {
-            if (Qword.type !== "image") {
-              return { ...Qword, chosen: Qword.correct };
-            }
-          });
-          return { ...query, words: fixAnswer };
-        }
-      );
+      this.ecercise.query.queries = this.ecercise.query.queries.map((query) => {
+        const fixAnswer = query.words.map((Qword) => {
+          if (Qword.type !== "image") {
+            return { ...Qword, chosen: Qword.correct };
+          } else {
+            return Qword;
+          }
+        });
+        return { ...query, words: fixAnswer };
+      });
+    },
+    async getPractice() {
+      const token = localStorage.getItem("token");
+      this.loadingOpenSection = true;
+      httpRequest
+        .get(`/books/book-content/contents/${this.$route.query.id}/`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((res) => {
+          const data = JSON.parse(JSON.stringify(res.data));
+          this.ecercise = data.content;
+          this.defaultExercise = data.default_content;
+          this.mainData = data;
+        });
+    },
+    async updatePractice() {
+      const token = localStorage.getItem("token");
+      this.loadingOpenSection = true;
+      const body = {
+        content: this.ecercise,
+        score: this.ecercise.score,
+      };
+      httpRequest
+        .patch(`/books/book-content/contents/${this.$route.query.id}/`, body, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((res) => {
+          const data = JSON.parse(JSON.stringify(res.data));
+          this.ecercise = data.content;
+          this.defaultExercise = data.default_content;
+          this.mainData = data;
+        });
     },
   },
 };
