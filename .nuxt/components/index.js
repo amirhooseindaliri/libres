@@ -24,6 +24,7 @@ export { default as AppIconsPancakeswap } from '../..\\components\\appIcons\\Pan
 export { default as AppIconsPrevIcon } from '../..\\components\\appIcons\\PrevIcon.vue'
 export { default as AppIconsReadMore } from '../..\\components\\appIcons\\ReadMore.vue'
 export { default as AppIconsSushiswap } from '../..\\components\\appIcons\\Sushiswap.vue'
+export { default as ContentsComponent } from '../..\\components\\contents\\component.vue'
 export { default as ModeDragBlank } from '../..\\components\\Mode\\DragBlank.vue'
 
 // nuxt/nuxt.js#8607

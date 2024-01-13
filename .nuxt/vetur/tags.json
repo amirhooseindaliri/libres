@@ -77,6 +77,9 @@
   "AppIconsSushiswap": {
     "description": "Auto imported from components/appIcons/Sushiswap.vue"
   },
+  "ContentsComponent": {
+    "description": "Auto imported from components/contents/component.vue"
+  },
   "ModeDragBlank": {
     "description": "Auto imported from components/Mode/DragBlank.vue"
   }

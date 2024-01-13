@@ -32,4 +32,5 @@ You can directly use them in pages and other components without the need to impo
 - `<AppIconsPrevIcon>` | `<app-icons-prev-icon>` (components/appIcons/PrevIcon.vue)
 - `<AppIconsReadMore>` | `<app-icons-read-more>` (components/appIcons/ReadMore.vue)
 - `<AppIconsSushiswap>` | `<app-icons-sushiswap>` (components/appIcons/Sushiswap.vue)
+- `<ContentsComponent>` | `<contents-component>` (components/contents/component.vue)
 - `<ModeDragBlank>` | `<mode-drag-blank>` (components/Mode/DragBlank.vue)

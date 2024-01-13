@@ -16,29 +16,57 @@
         <div
           class="col-md-12"
           style="padding: 0"
-          v-for="content in listContentSection"
+          v-for="content in listContentSection.content_data"
         >
-          <div class="row align-items-center">
-            <div class="col-md-10">
-              <div class="row">
-                <div
-                  class="col-md-auto col-auto"
-                  style="padding: 0; color: #e73883"
+          <contents-component
+            v-if="content.content_type !== 'Practice'"
+            :content="content"
+          />
+          <div
+            class="col-md-12"
+            v-else-if="content.content_type === 'Practice'"
+          >
+            <div class="row">
+              <div class="col-md-12">
+                <nuxt-link
+                  target="_blank"
+                  :to="`/StartPractice?id=${content.id}`"
                 >
-                  <i class="material-icons">videocam</i>
-                </div>
-                <div class="col-md-auto col-auto ml-2" style="padding: 5px 0">
-                  {{ content.name }}
-                </div>
+                  <div class="row align-center" style="margin-right: -40px">
+                    <div
+                      class="col-md-auto col-auto pr-2"
+                      style="color: #333437"
+                    >
+                      <i class="material-icons" style="font-size: 25px"
+                        >check_circle</i
+                      >
+                    </div>
+                    <div class="col-md-auto col-auto" style="padding: 5px 0">
+                      {{ content.name }}
+                    </div>
+                    <div
+                      class="col-md-auto col-auto cat-green py-0 px-1 ml-3 mt-1"
+                    >
+                      {{ content.tag }}
+                    </div>
+
+                    <div
+                      class="LasttryStyle col-md col pt-1"
+                      :style="{
+                        textAlign: 'right',
+                        color: 'darkgray',
+                        fontSize: '16px',
+                      }"
+                    >
+                      <span class="pr-1">{{ content.score }}%</span>
+
+                      <div style="font-size: small; color: beige; color: black">
+                        last try
+                      </div>
+                    </div>
+                  </div>
+                </nuxt-link>
               </div>
-            </div>
-            <div class="col-md-2" style="text-align: right">
-              <a
-                download="Introduction"
-                href="https://ftp.lib-res.info/BigBangFiles/ResourceFile/29/c14a96bd53244f16983cffb1da82b7d8.m4v"
-                target="_blank"
-                ><i class="material-icons" style="color: #e73883">get_app</i></a
-              >
             </div>
           </div>
         </div>
