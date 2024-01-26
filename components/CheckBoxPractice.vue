@@ -16,7 +16,11 @@
                     changeCheckBox($event, item, data.queries[0].query_id)
                   "
                   :checked="
-                    selectedOption(item, data.queries[0].words[0].correct)
+                    selectedOption(
+                      item,
+                      data.queries[0].words[0].correct,
+                      data.queries[0].words[0].chosen
+                    )
                   "
                 />
                 <label
@@ -52,13 +56,14 @@ export default {
     },
     changeCheckBox(evt, itemData, query_id) {
       const value = evt.target.value;
-      const chosenList = this.data.queries[0].words[0].chosen;
+      const chosenList = [...this.data.queries[0].words[0].chosen];
+      console.log(this.data);
       let newWords = [];
       if (evt.target.checked) {
         chosenList.push(value);
         newWords = [{ ...this.data.queries[0].words[0], chosen: chosenList }];
       } else {
-        const chosen = chosenList.filter((chose) => chose !== "value");
+        const chosen = chosenList.filter((chose) => chose !== value);
         newWords = [{ ...this.data.queries[0].words[0], chosen: chosen }];
       }
       this.$emit("selectSuccess", {
@@ -66,9 +71,15 @@ export default {
         newWords,
       });
     },
-    selectedOption(option, correct) {
-      if (this.seeAnswer || this.checkAnswer) {
+    selectedOption(option, correct, chosen) {
+      if (this.seeAnswer) {
         if (correct.includes(option)) {
+          return true;
+        } else {
+          return false;
+        }
+      } else if (this.checkAnswer) {
+        if (correct.includes(option) && chosen.includes(option)) {
           return true;
         } else {
           return false;

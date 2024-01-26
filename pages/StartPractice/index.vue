@@ -75,6 +75,7 @@
                     :data="ecercise.query"
                     @dropSuccess="Success"
                     :checkAnswer="ecercise.checkAnswer"
+                    :key="ecercise.seeAnswer"
                   />
                   <DropDownBlank
                     v-if="ecercise.query.query_type === 'drop_down_blank'"
@@ -82,6 +83,7 @@
                     @selectSuccess="Success"
                     :checkAnswer="ecercise.checkAnswer"
                     :seeAnswer="ecercise.seeAnswer"
+                    :key="ecercise.seeAnswer"
                   />
                   <ContainerDrag
                     v-if="ecercise.query.query_type === 'box_drag'"
@@ -89,6 +91,7 @@
                     @dropSuccess="Success"
                     :checkAnswer="ecercise.checkAnswer"
                     :seeAnswer="ecercise.seeAnswer"
+                    :key="ecercise.seeAnswer"
                   />
                   <SimpleBlank
                     v-if="ecercise.query.query_type === 'simple_blank'"
@@ -96,6 +99,7 @@
                     @changeSuccess="Success"
                     :checkAnswer="ecercise.checkAnswer"
                     :seeAnswer="ecercise.seeAnswer"
+                    :key="ecercise.seeAnswer"
                   />
                   <DragInsidePractice
                     v-if="ecercise.query.query_type === 'drag_inside'"
@@ -211,6 +215,7 @@ export default {
       const findIndex = this.ecercise.query.queries.findIndex(
         (item) => item.query_id === data.query_id
       );
+      console.log(findIndex, data);
       this.ecercise.query.queries[findIndex].words = data.newWords;
       if (
         this.ecercise.words_box &&
@@ -269,9 +274,11 @@ export default {
             }
           } else if (word.type === "checkBox_chose") {
             allQuestion = word.options.length;
+            console.log(allQuestion, word.chosen);
             const is_correct = word.chosen.filter((chose) => {
               return word.correct.includes(chose);
             });
+
             corrected = is_correct.length;
           }
         });
@@ -294,9 +301,7 @@ export default {
       }
     },
     TryAgain() {
-      const newEcercise = this.defaultExercise;
-      this.ecercise = newEcercise;
-      console.log(this.ecercise);
+      this.ecercise = { ...this.defaultExercise };
     },
     SeeAnswer() {
       this.ecercise.seeAnswer = true;
@@ -315,15 +320,15 @@ export default {
       const token = localStorage.getItem("token");
       this.loadingOpenSection = true;
       httpRequest
-        .get(`/books/book-content/contents/${this.$route.query.id}/`, {
+        .get(`books/practices/${this.$route.query.id}/`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         })
         .then((res) => {
           const data = JSON.parse(JSON.stringify(res.data));
-          this.ecercise = data.content;
-          this.defaultExercise = data.default_content;
+          this.ecercise = data.content.body;
+          this.defaultExercise = data.content.defaultContent;
           this.mainData = data;
         });
     },
@@ -331,19 +336,23 @@ export default {
       const token = localStorage.getItem("token");
       this.loadingOpenSection = true;
       const body = {
-        content: this.ecercise,
+        content: {
+          body: this.ecercise,
+          defaultContent: this.defaultExercise,
+        },
         score: this.ecercise.score,
       };
       httpRequest
-        .patch(`/books/book-content/contents/${this.$route.query.id}/`, body, {
+        .patch(`books/practices/${this.$route.query.id}/`, body, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         })
         .then((res) => {
           const data = JSON.parse(JSON.stringify(res.data));
-          this.ecercise = data.content;
-          this.defaultExercise = data.default_content;
+          this.ecercise = data.content.body;
+          this.defaultExercise = data.content.defaultContent;
+
           this.mainData = data;
         });
     },

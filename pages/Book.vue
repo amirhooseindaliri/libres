@@ -95,7 +95,6 @@ export default {
   computed: {
     menuItem() {
       if (this.$route.name.search("resources") >= 0) {
-        console.log(this.itemsBook, "item books");
         return this.itemsBook;
       } else {
         return this.itemsPractice;
@@ -127,12 +126,10 @@ export default {
             `/Book/resources?bookid=${this.$route.query.bookid}&part=${this.itemsBook[0].id}`
           );
           this.itemsPractice = data.practices;
-          console.log(this.itemsPractice);
         });
     },
     generateLink(event, bookid, partId) {
       event.preventDefault();
-      console.log(bookid, partId);
       this.$router.push(
         `/Book/${
           this.$route.path.search("resources") > 0 ? "resources" : "practices"

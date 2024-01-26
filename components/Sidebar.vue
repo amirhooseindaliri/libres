@@ -159,7 +159,6 @@ export default {
   },
   mounted() {
     this.$vuetify.goTo(0);
-    console.log(this.$route.path.search("Book") > 0);
   },
   methods: {
     signOut(e) {
