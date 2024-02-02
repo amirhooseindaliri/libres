@@ -6,7 +6,7 @@
         <tbody>
           <tr>
             <td v-for="item in data.hint">
-              <audio controls v-if="data.hint_type === 'image'">
+              <audio controls v-if="data.hint_type === 'audio'">
                 <source :src="item" type="audio/mpeg" />
                 Your browser does not support the audio tag.
               </audio>
